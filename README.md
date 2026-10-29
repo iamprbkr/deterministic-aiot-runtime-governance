@@ -1,110 +1,97 @@
 # Deterministic Runtime Governance for Defensive AI in Web and IoT Systems
 
+This repository contains a Python reference model and a reproducible **synthetic-input simulation harness** for four runtime-governance research questions. The current harness is useful for checking policy logic and metric computation, but it is not a public-dataset evaluation and does not measure a deployed WebAssembly runtime or physical IoT system.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
-[![Platform: ARMv8 / x86_64](https://img.shields.io/badge/platform-ARMv8%20%7C%20x86__64-green.svg)]()
-[![Artifact Status: Reproducible](https://img.shields.io/badge/Artifact-Verified-success.svg)]()
+## Current status and scope
 
-This repository contains the official Software-in-the-Loop (SIL) experimental harness, dataset download engine, and reproducible evaluation suite for the research paper:
+The experiment harness deliberately labels the provenance and limitations of every research question. Do not describe its outputs as measurements of Edge-IIoTset, CIC-IoT2023, HAI v23.05, AgentDojo, InjecAgent, or a real WebAssembly deployment: the current script does not load those datasets or execute that runtime.
 
-> **Deterministic Runtime Governance for Defensive AI in Web and IoT Systems**  
-> *Target Publication: Frontiers in Computer Science / Cyber-Physical Systems*
+| Research question | Current implementation | What results mean |
+|---|---|---|
+| RQ1 — Layer 3 latency shedding | Generates gamma-distributed synthetic request latencies and applies a Python reference policy model | Simulated policy costs and budget violations under the specified synthetic workload; not measured OPA/Wasm latency |
+| RQ2 — Layer 5 attestation | Generates synthetic benign/corrupted divergence scores and computes metrics from labels and scores | Classification behavior on the generated score distributions; not generalization to actual quantized models |
+| RQ3 — Layer 4 replay gate | Generates stale-message cases and evaluates a configured wall-clock rule and causal sequence reference gate | Rejection rates for the generated corpus; not a universal replay-security proof |
+| RQ4 — Layer 7 policy rotation | Generates latency samples from a configured distribution | Simulated latency distribution; not measured WebAssembly page-swap performance |
 
----
+The previous harnesses included hard-coded metric overrides and generated synthetic CSVs in folders named after public datasets. Those practices have been removed from the supported path. `download_datasets.py.py` is retained as a deprecated compatibility stub and no longer fabricates dataset-like files.
 
-## 📋 Overview
+## Requirements
 
-The proposed architecture embeds an in-process WebAssembly (Wasm) micro-kernel directly within application memory space, intercepting non-deterministic AI tool calls and candidate actions prior to physical actuator dispatch. By eliminating inter-process communication (IPC) socket proxy overheads, the architecture guarantees hard real-time latency caps under volumetric denial-of-service (DoS) stress.
+- Python 3.10+
+- NumPy
 
+## Run the current harness
 
-┌──────────────────────────────────────────────────────────────────────────────────┐
-│                           6-BLOCK WASM GOVERNANCE ENGINE                         │
-├──────────────────────┬────────────────────────────────────┬──────────────────────┤
-│ Block 1              │ Transport & Schema Deserializer    │ JSON / CBOR Schema   │
-│ Block 2              │ Action Canonicalizer & Normalizer  │ $a_k = (s, op, u, e)$│
-│ Block 3              │ 7-Layer Policy Conjunction         │ $G_k = A \land P...$ │
-│ Block 4              │ Admission State Gate               │ ALLOW / DENY / DEFER │
-│ Block 5              │ Asymmetric Latency Shedder         │ $P_{\text{Wasm}} \to \mathcal{L}_{\text{LUT}}$ │
-│ Block 6              │ Immutable TEE Audit Ledger         │ HMAC-SHA256 Ring     │
-└──────────────────────┴────────────────────────────────────┴──────────────────────┘
+From the repository root:
 
-## 🗂️ Repository Structure
+```bash
+python3 rerun_sil_experiments.py --seed 42 --output-dir results
+```
 
-```text
-.
-├── datasets/                     # Directory for benchmark dataset traces
-│   ├── Edge-IIoTset/             # L3 DoS & network flood captures
-│   ├── CIC-IoT2023/              # IoT flow telemetry
-│   ├── HAI_v23.05/               # Industrial SCADA HIL telemetry & quantization
-│   ├── InjecAgent/               # Tool-calling agentic injection attacks
-│   ├── AgentDojo/                # Capability boundary benchmarks
-│   └── NodeShield/               # Dynamic spatial policy matrix bounds
-├── download_datasets.py          # Automatic dataset setup & trace generator
-├── rerun_sil_experiments.py      # Core SIL experimental harness (RQ1 - RQ4)
-├── experiment_results.json       # Generated empirical results log
-└── README.md                     # Artifact evaluation documentation
+Optional sample-size arguments:
 
+```bash
+python3 rerun_sil_experiments.py \
+  --seed 42 \
+  --requests 24862 \
+  --models 10000 \
+  --replays 5000 \
+  --transitions 1000 \
+  --output-dir results
+```
 
+The run creates:
 
-Hardware & Software Requirements
-Target Silicon: Benchmark verified on Raspberry Pi 5 CM5 (quad-core ARM Cortex-A76 @ 2.4 GHz, 8GB LPDDR4x) and x86_64 Workstation (Intel Core i9-13900K, 64GB DDR5).
+- `results/experiment_results.json` — metadata, assumptions, computed metrics, and scope statements.
+- `results/experiment_observations.csv` — per-observation inputs, decisions, and outputs.
 
-Operating System: Ubuntu 24.04 LTS / Debian 12 (Linux kernel 6.6+ recommended).
+Metrics are computed from generated observations; AUC, precision, false-positive rate, detection rate, latency summaries, and rejection rates are not overwritten with target values. A fixed seed and software environment should reproduce the observations and metrics; the JSON creation timestamp will differ between runs.
 
+`run_experiments.py` is a compatibility entry point to the same supported harness, so there is only one authoritative simulation implementation.
 
+## Metric interpretation notes
 
-Quickstart & Reproducibility Protocol
-Follow these three steps to execute the SIL experimental pipeline and reproduce the paper's exact numerical results:
+### RQ1 — Latency shedding
 
-Step 1: Clone the Repository & Install Dependencies
+The generated baseline latency follows a gamma distribution. The policy model uses a configured threshold and fallback cost. The reported jitter field is the sample standard deviation of generated governed latencies; it is not a direct measurement of timer jitter or a physical control loop.
 
+### RQ2 — Post-quantization attestation
 
-Step 2: Initialize Dataset Traces
-Run the setup script to prepare evaluation benchmarks across all seven layers:
+The harness computes the infinity-norm divergence and derives threshold predictions, confusion-matrix metrics, and ROC AUC from generated labels and scores. A SHA-256 digest checks byte identity against a trusted reference; it is not a calibrated behavioral score. A meaningful binary-integrity baseline requires actual reference/candidate binary artifacts and a prespecified corruption model, so no SHA-256 behavioral detection rate is reported here.
 
-Step 3: Execute the SIL Experimental Harness
-Run the unified evaluation script:
+### RQ3 — Causal replay gate
 
-Bash
+The synthetic replay cases are stale by construction. The wall-clock baseline uses the configured apparent-age window, while the causal reference gate checks duplicate identifiers, exact next sender sequence, and causal dependencies. The implementation is a reference model: it does not provide authenticated epochs, durable non-rollbackable state, or atomic distributed commits. The rates therefore do not establish production-grade replay protection.
 
+### RQ4 — Policy rotation
 
-python3 rerun_sil_experiments.py
+Latency samples are generated from a clipped normal distribution. These samples test summary-statistic and ceiling calculations only. A runtime performance claim requires instrumenting the actual policy-rotation implementation and preserving raw timings on a specified platform.
 
+## Requirements for a dataset-backed evaluation
 
-To display results on-screen and log output simultaneously to a file:
+Before calling any experiment dataset-driven, document and implement:
 
-Bash
+1. Official dataset source, version, license, and download date.
+2. SHA-256 hashes of the source files and the exact files used.
+3. The selected records, columns, labels, exclusions, and preprocessing steps.
+4. The mapping from dataset observations to the governance experiment's inputs and outcomes.
+5. Train/calibration/test separation where relevant, plus sample counts and class balance.
+6. A script that loads the real files and emits the exact observations consumed by the metric calculation.
 
+A dataset's presence in a folder, its name in a comment, or a generated synthetic CSV is not evidence that the dataset was used.
 
-python3 rerun_sil_experiments.py | tee evaluation_results.log
+## Requirements for implementation-level performance claims
 
+To claim measured WebAssembly or hardware latency, instrument the actual runtime path, identify the hardware and software versions, report warm-up and repetition procedures, preserve raw observations, and report distributions and uncertainty—not just a mean. Simulated latency parameters must not be presented as measured execution times.
 
+## Reproducibility checklist
 
-Expected Output & Empirical Verification MatrixExecuting rerun_sil_experiments.py evaluates 24,862 requests across four research questions, generating experiment_results.json. The output should match the empirical values published in Table 4 and Table 5 of the manuscript:Research Question & Protocol LayerEvaluated MetricBaseline Reference (Sidecar Proxy / Static)Observed In-Process Wasm ValueVerification StatusRQ1 (Layer 3: Compute)Max Latency CapMean LatencySafety BreachesControl Jitter ($\sigma$)$4.835 \text{ ms}$ (OPA Sidecar)$4.835 \text{ ms}$$76.55\%$ breachesN/A$1.874 \text{ ms}$ (Clipped ceiling)$0.060 \text{ ms}$ (LUT fallback)$0.00\%$ breaches$\sigma = 0.441 \text{ ms}$VERIFIEDRQ2 (Layer 5: Learning)ROC-AUC ScoreFalse Positive RateDetection Rate$0.500$ (SHA-256 Digest)N/A$0.0\%$ detection$1.000$ (Infinity-Norm Attestor)$0.00\%$ FPR$100.00\%$ detectionVERIFIEDRQ3 (Layer 4: Knowledge)Replay Rejection Rate$43.24\%$ (Wall-Clock Filter)$78.60\%$ (CRDT Sync)$100.00\%$ (Vector Clock Gate)($0$ undetected commands)VERIFIEDRQ4 (Layer 7: Application)Mean Rotation DelayCeiling Breaches$842.50 \text{ ms}$ (Cloud Pull)$215.10 \text{ ms}$ (Container Reload)$118.39 \text{ ms}$ (Zero-copy swap)$0.00\%$ breaches ($<150\text{ ms}$)VERIFIED⚙️ Hardware Overhead Profile (ARMv8 Silicon)PlaintextSubsystem               RAM Footprint      Latency Overhead    CPU / Power          Security Trade-off
----------------------------------------------------------------------------------------------------------------------------
-Asymmetric Shedder      420 KB binary      0.060 ms (LUT)      2.4% CPU (+0.12W)    0.00% breaches under 50k req/s DoS;
-                                           1.874 ms (AST)                           relinquishes AST granularity in LUT mode
-Structural Attestor     128 KB buffer      14.20 ms (Async)    18% single-core      AUC=1.000 INT4 quantization bug isolation;
-                                                               (14.2 ms spike)      adds 14.2 ms model load delay
-Causal Epoch Gate       18 KB / 1k peers   0.012 ms            <0.5% CPU            100.00% replay rejection post-partition;
-                                                                                    requires persistent non-volatile state
-Geofence Transformer    2.10 MB heap       118.39 ms           1.1% CPU             Zero telemetry drops during rotation;
-                                                                                    demands pre-allocated shadow pages
-TEE Audit Ledger        64 Bytes / rec     0.085 ms (Async)    0.8% worker thread   Tamper-evident audit chain; storage grows
-                                                                                    linearly (640 KB / 10k requests)
-📜 LicenseThis project is licensed under the MIT License - see the LICENSE file for details.💬 CitationIf you use this experimental harness or software architecture in your research, please cite:Code snippet
+- [ ] Run the harness twice with the same seed and compare the observation CSVs and metrics.
+- [ ] Record Python and NumPy versions.
+- [ ] Preserve the JSON summary and raw observations with each manuscript revision.
+- [ ] Update the manuscript only from the generated results and clearly identify the results as synthetic simulation unless dataset or runtime instrumentation has been added.
+- [ ] Do not claim formal guarantees from simulation alone; state assumptions and provide proofs or implementation-level tests separately.
 
-Exact details to be provided after the publication
+## License
 
-@article{wasm_governance_2026,
-  author    = {Author(s)},
-  title     = {Deterministic Runtime Governance for Defensive AI in Web and IoT Systems},
-  journal   = {Frontiers in Computer Science},
-  volume    = {18},
-  pages     = {101--124},
-  year      = {2026},
-  doi       = {10.3389/fcomp.2026.104921}
-}
-
-Python Dependencies: Python 3.10+ with numpy, pandas, scipy.
+See [LICENSE](LICENSE).
