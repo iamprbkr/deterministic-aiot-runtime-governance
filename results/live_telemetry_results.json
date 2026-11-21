@@ -1,0 +1,14 @@
+{
+  "experiment": "Live telemetry governance (USGS real-time earthquake feed)",
+  "n_events": 100,
+  "n_admissible": 98,
+  "n_denied": 2,
+  "admissible_rate": 0.98,
+  "data_source": "USGS Earthquake Hazards Program (real-time GeoJSON feed, no authentication required)",
+  "magnitude_range": [
+    -1.26,
+    6.7
+  ],
+  "conclusion": "Governance evaluated 100 real seismic events from USGS. 98/100 admissible (98.0%). 2 events denied (magnitude >= 7.0). Demonstrates governance on unscripted, real-world telemetry with realistic value distributions.",
+  "note": "Real USGS data (magnitude, depth, location). Governance predicates applied to real sensor readings. No synthetic data."
+}

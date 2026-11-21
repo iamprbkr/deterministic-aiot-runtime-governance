@@ -1,0 +1,50 @@
+{
+  "scalability": {
+    "clients_10": {
+      "n_clients": 10,
+      "n_ops": 100,
+      "throughput_ops_per_s": 16749.6,
+      "mean_queue_wait_ms": 46.333,
+      "max_queue_depth": 9,
+      "drops": 0,
+      "deadline_miss_rate": 0.0
+    },
+    "clients_50": {
+      "n_clients": 50,
+      "n_ops": 500,
+      "throughput_ops_per_s": 343288.7,
+      "mean_queue_wait_ms": 7476.874,
+      "max_queue_depth": 1000,
+      "drops": 247,
+      "deadline_miss_rate": 0.494
+    },
+    "clients_100": {
+      "n_clients": 100,
+      "n_ops": 1000,
+      "throughput_ops_per_s": 345733.6,
+      "mean_queue_wait_ms": 9491.81,
+      "max_queue_depth": 1000,
+      "drops": 887,
+      "deadline_miss_rate": 0.887
+    },
+    "clients_500": {
+      "n_clients": 500,
+      "n_ops": 5000,
+      "throughput_ops_per_s": 313865.3,
+      "mean_queue_wait_ms": 10468.644,
+      "max_queue_depth": 1000,
+      "drops": 4979,
+      "deadline_miss_rate": 0.9958
+    },
+    "clients_1000": {
+      "n_clients": 1000,
+      "n_ops": 10000,
+      "throughput_ops_per_s": 286213.9,
+      "mean_queue_wait_ms": 10985.45,
+      "max_queue_depth": 1000,
+      "drops": 9990,
+      "deadline_miss_rate": 0.999
+    }
+  },
+  "note": "Simulated queue model. Service rate 100 ops/s. Not measured on real hardware."
+}

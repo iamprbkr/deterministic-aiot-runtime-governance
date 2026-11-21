@@ -1,0 +1,13 @@
+{
+  "model": "LogisticRegression (8 features)",
+  "n_train": 1500,
+  "n_test": 500,
+  "quantization": "int8 (256 levels)",
+  "delta_infinity": 0.004695175392073425,
+  "threshold": 0.008,
+  "within_bound": true,
+  "sha256_ref": "c0fa193a5294fb557a96867e21385ca55b3dde3b1ff059b82d04b512b8210078",
+  "sha256_quantized": "121d82c35141189ac624bdbb3b5f68481f4982d9e63efd0b5f480deef140c38e",
+  "digests_match": false,
+  "interpretation": "SHA-256 rejects every quantized model (digests differ: c0fa193a vs 121d82c3). M3 allows quantized models that stay within tolerance (delta=0.0047 <= 0.008 -> ALLOW). Thus M3 is more permissive than SHA-256 for legitimate optimization while still detecting excessive behavioural divergence."
+}

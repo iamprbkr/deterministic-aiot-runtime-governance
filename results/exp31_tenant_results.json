@@ -1,0 +1,7 @@
+{
+  "experiment": "Cross-tenant isolation & noisy-neighbor containment",
+  "n_trials": 20,
+  "tenant_b_p99_mean_ms": 1.524,
+  "tenant_b_p99_max_ms": 3.377,
+  "conclusion": "Cross-tenant isolation: Tenant B's p99 latency remains stable even when Tenant A is under flood. Governance evaluates each tenant independently; no shared queue or state."
+}

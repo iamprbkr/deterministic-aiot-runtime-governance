@@ -1,0 +1,51 @@
+{
+  "dataset": "CIC-IDS-2018 (integrated, 49,990 flows, 14 attack types)",
+  "n_sampled": 19368,
+  "n_normal": 7500,
+  "n_attack": 11868,
+  "full_governance": {
+    "n": 19368,
+    "TP": 11868,
+    "FP": 7223,
+    "TN": 277,
+    "FN": 0,
+    "false_allow_rate": 0.0,
+    "false_deny_rate": 0.9631,
+    "accuracy": 0.6271
+  },
+  "no_governance": {
+    "n": 19368,
+    "TP": 0,
+    "FP": 0,
+    "TN": 7500,
+    "FN": 11868,
+    "false_allow_rate": 1.0,
+    "false_deny_rate": 0.0,
+    "accuracy": 0.3872
+  },
+  "static_acl": {
+    "n": 19368,
+    "TP": 11868,
+    "FP": 7223,
+    "TN": 277,
+    "FN": 0,
+    "false_allow_rate": 0.0,
+    "false_deny_rate": 0.9631,
+    "accuracy": 0.6271
+  },
+  "per_attack_false_allow": {
+    "Bot": 0.0,
+    "Brute Force -Web": 0.0,
+    "DDOS attack-HOIC": 0.0,
+    "DDOS attack-LOIC-UDP": 0.0,
+    "DDoS attacks-LOIC-HTTP": 0.0,
+    "DoS attacks-GoldenEye": 0.0,
+    "DoS attacks-Hulk": 0.0,
+    "DoS attacks-SlowHTTPTest": 0.0,
+    "DoS attacks-Slowloris": 0.0,
+    "FTP-BruteForce": 0.0,
+    "Infilteration": 0.0,
+    "SSH-Bruteforce": 0.0
+  },
+  "limitations": "Predicate mapping uses IP and port only. F_k, C_k, B_k, I_k, D_k trivially True. Same construct as Edge-IIoTset but on a different dataset with real IP addresses."
+}

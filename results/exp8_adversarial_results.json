@@ -1,0 +1,18 @@
+{
+  "experiment": "Adversarial evasion & feature-perturbation resistance",
+  "n_attack_samples": 2000,
+  "strategy1_ip_spoofing": {
+    "evaded": 258,
+    "rate": 0.129
+  },
+  "strategy2_port_masquerading": {
+    "evaded": 258,
+    "rate": 0.129
+  },
+  "strategy3_payload_reduction": {
+    "evaded": 2,
+    "rate": 0.001
+  },
+  "defense_in_depth_catch_rate": 0.871,
+  "note": "Evasion requires passing ALL 7 predicates simultaneously. IP spoofing is mitigated by A_k (authenticated identity, not just IP). Port masquerading is mitigated by P_k (policy, not just port). Payload reduction is mitigated by C_k and B_k (context and behaviour, not just size)."
+}

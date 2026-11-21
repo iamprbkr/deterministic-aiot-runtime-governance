@@ -1,0 +1,21 @@
+{
+  "experiment": "Statistical audit (Wilcoxon, Mann-Whitney, Cliff's Delta, power, Holm-Bonferroni)",
+  "RQ1": {
+    "wilcoxon_W": 0.0,
+    "wilcoxon_p": 0.0,
+    "mann_whitney_U": 611592921.5,
+    "mann_whitney_p": 0.0,
+    "cliffs_delta": 0.9819,
+    "cohens_d": 2.0979,
+    "power": 1.0,
+    "holm_bonferroni_corrected_p": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "all_significant": true
+  },
+  "conclusion": "Baseline vs. governed latency: statistically significant (p < 0.001, Wilcoxon + Mann-Whitney). Effect size: large (Cohen's d = 2.098, Cliff's Delta = 0.9819). Power = 1.00. Holm-Bonferroni correction: all comparisons significant.",
+  "note": "Non-parametric tests used because latency distributions are non-normal (gamma). Effect sizes quantify practical magnitude beyond statistical significance."
+}

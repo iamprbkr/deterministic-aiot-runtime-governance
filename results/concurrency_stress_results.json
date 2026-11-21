@@ -1,0 +1,43 @@
+{
+  "description": "Concurrency stress test: N threads evaluating the admission rule concurrently.",
+  "seed": 42,
+  "results": {
+    "threads_10": {
+      "n_threads": 10,
+      "ops_per_thread": 1000,
+      "total_ops": 10000,
+      "elapsed_s": 0.0311,
+      "throughput_ops_per_s": 321438.0,
+      "per_decision_us": 3.111,
+      "verdict_leakage_count": 0,
+      "determinism_verified": true
+    },
+    "threads_50": {
+      "n_threads": 50,
+      "ops_per_thread": 1000,
+      "total_ops": 50000,
+      "elapsed_s": 0.2099,
+      "throughput_ops_per_s": 238179.7,
+      "per_decision_us": 4.1985,
+      "verdict_leakage_count": 0,
+      "determinism_verified": true
+    },
+    "threads_100": {
+      "n_threads": 100,
+      "ops_per_thread": 1000,
+      "total_ops": 100000,
+      "elapsed_s": 0.4401,
+      "throughput_ops_per_s": 227223.5,
+      "per_decision_us": 4.401,
+      "verdict_leakage_count": 0,
+      "determinism_verified": true
+    },
+    "single_threaded_baseline": {
+      "ops": 10000,
+      "elapsed_s": 0.0147,
+      "per_decision_us": 1.4715,
+      "throughput_ops_per_s": 679569.4
+    }
+  },
+  "conclusion": "No verdict leakage detected across 10/50/100 threads (10,000-100,000 ops). Determinism verified under contention."
+}

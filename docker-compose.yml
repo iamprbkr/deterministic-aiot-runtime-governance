@@ -1,0 +1,49 @@
+# Docker Compose for simulation-based empirical validation
+# Simulates IoT edge, web backend, and adversary on a single machine
+version: "3.8"
+
+services:
+  iot-edge:
+    build: .
+    container_name: iot-edge-node
+    cpus: "0.25"
+    mem_limit: "256m"
+    memswap_limit: "256m"
+    cap_add:
+      - NET_ADMIN
+    networks:
+      - gov-net
+    volumes:
+      - ./results:/app/results
+    command: python rerun_sil_experiments.py --seed 42 --output-dir /app/results
+
+  web-backend:
+    image: python:3.11-slim
+    container_name: web-backend
+    cpus: "1.0"
+    mem_limit: "1g"
+    networks:
+      - gov-net
+    volumes:
+      - ./web_backend.py:/app/web_backend.py
+    working_dir: /app
+    command: python web_backend.py
+
+  adversary:
+    image: python:3.11-slim
+    container_name: adversary-simulator
+    cpus: "1.0"
+    mem_limit: "1g"
+    networks:
+      - gov-net
+    volumes:
+      - ./adversary.py:/app/adversary.py
+    working_dir: /app
+    command: python adversary.py
+
+networks:
+  gov-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16

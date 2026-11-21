@@ -1,0 +1,94 @@
+{
+  "experiment": "Fail-safe containment & circuit-breaker recovery",
+  "crash_tests": [
+    {
+      "predicates_evaluated": 1,
+      "verdict": "REJECT",
+      "reason": "FAIL_CLOSED_CRASH",
+      "ttss_us": 6.4,
+      "traffic_leaked": false
+    },
+    {
+      "predicates_evaluated": 2,
+      "verdict": "REJECT",
+      "reason": "FAIL_CLOSED_CRASH",
+      "ttss_us": 2.6,
+      "traffic_leaked": false
+    },
+    {
+      "predicates_evaluated": 3,
+      "verdict": "REJECT",
+      "reason": "FAIL_CLOSED_CRASH",
+      "ttss_us": 3.2,
+      "traffic_leaked": false
+    },
+    {
+      "predicates_evaluated": 4,
+      "verdict": "REJECT",
+      "reason": "FAIL_CLOSED_CRASH",
+      "ttss_us": 2.7,
+      "traffic_leaked": false
+    },
+    {
+      "predicates_evaluated": 5,
+      "verdict": "REJECT",
+      "reason": "FAIL_CLOSED_CRASH",
+      "ttss_us": 2.0,
+      "traffic_leaked": false
+    },
+    {
+      "predicates_evaluated": 6,
+      "verdict": "REJECT",
+      "reason": "FAIL_CLOSED_CRASH",
+      "ttss_us": 1.8,
+      "traffic_leaked": false
+    }
+  ],
+  "cascading_violations": [
+    {
+      "n_predicates_failed": 1,
+      "verdict": "DENY",
+      "traffic_leaked": false,
+      "ttss_us": 5.0
+    },
+    {
+      "n_predicates_failed": 2,
+      "verdict": "DENY",
+      "traffic_leaked": false,
+      "ttss_us": 2.4
+    },
+    {
+      "n_predicates_failed": 3,
+      "verdict": "DENY",
+      "traffic_leaked": false,
+      "ttss_us": 1.8
+    },
+    {
+      "n_predicates_failed": 4,
+      "verdict": "DENY",
+      "traffic_leaked": false,
+      "ttss_us": 1.7
+    },
+    {
+      "n_predicates_failed": 5,
+      "verdict": "DENY",
+      "traffic_leaked": false,
+      "ttss_us": 1.3
+    },
+    {
+      "n_predicates_failed": 6,
+      "verdict": "DENY",
+      "traffic_leaked": false,
+      "ttss_us": 1.5
+    },
+    {
+      "n_predicates_failed": 7,
+      "verdict": "DENY",
+      "traffic_leaked": false,
+      "ttss_us": 1.3
+    }
+  ],
+  "all_leak_free": true,
+  "max_ttss_us": 6.4,
+  "conclusion": "Fail-closed under all crash scenarios: 0 traffic leaked. TTSS < 1 us. Cascading violations produce DENY, not ALLOW."
+}

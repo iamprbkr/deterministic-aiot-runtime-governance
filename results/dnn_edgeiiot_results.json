@@ -1,0 +1,27 @@
+{
+  "dataset": "DNN-EdgeIIoT (157,800 flows, 14 attack types)",
+  "n_sampled": 50000,
+  "n_normal": 7500,
+  "n_attack": 42500,
+  "full_governance": {
+    "n": 50000,
+    "TP": 42499,
+    "FP": 6372,
+    "TN": 1128,
+    "FN": 1,
+    "false_allow_rate": 0.0,
+    "false_deny_rate": 0.8496,
+    "accuracy": 0.8725
+  },
+  "no_governance": {
+    "n": 50000,
+    "TP": 0,
+    "FP": 0,
+    "TN": 7500,
+    "FN": 42500,
+    "false_allow_rate": 1.0,
+    "false_deny_rate": 0.0,
+    "accuracy": 0.15
+  },
+  "limitations": "Same structure as Edge-IIoTset. Predicate mapping uses IP and port. F_k, C_k, B_k, I_k, D_k partially derived from available features."
+}

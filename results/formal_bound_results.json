@@ -1,0 +1,38 @@
+{
+  "bound_analysis": {
+    "0.01": {
+      "k1": 0.01,
+      "k2": 0.0001,
+      "k3": 1.0000000000000002e-06,
+      "k7": 1.0000000000000002e-14
+    },
+    "0.05": {
+      "k1": 0.05,
+      "k2": 0.0025000000000000005,
+      "k3": 0.00012500000000000003,
+      "k7": 7.812500000000003e-10
+    },
+    "0.1": {
+      "k1": 0.1,
+      "k2": 0.010000000000000002,
+      "k3": 0.0010000000000000002,
+      "k7": 1.0000000000000004e-07
+    },
+    "0.2": {
+      "k1": 0.2,
+      "k2": 0.04000000000000001,
+      "k3": 0.008000000000000002,
+      "k7": 1.2800000000000005e-05
+    }
+  },
+  "minimality": {
+    "A": 0.4258,
+    "P": 0.6724,
+    "F": 0.0,
+    "C": 0.0,
+    "B": 0.0,
+    "I": 0.0,
+    "D": 0.0
+  },
+  "note": "The false-allow bound under bounded uncertainty is eps^k where k is the number of predicates actually False for a given attack. Worst case (k=1): eps. Best case (k=7): eps^7. On Edge-IIoTset, only A_k and P_k are discriminating; the full 7-predicate set is not minimal for network-flow governance but guards distinct failure modes in other contexts."
+}

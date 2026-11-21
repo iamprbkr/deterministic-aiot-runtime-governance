@@ -1,0 +1,41 @@
+{
+  "1.0": {
+    "freq_mhz": 1114.0,
+    "time_us": 0.335,
+    "deadline_miss": false,
+    "base": "Renode: 373 instructions, CPI=1"
+  },
+  "0.8": {
+    "freq_mhz": 891.2,
+    "time_us": 0.419,
+    "deadline_miss": false,
+    "base": "Renode: 373 instructions, CPI=1"
+  },
+  "0.6": {
+    "freq_mhz": 668.4,
+    "time_us": 0.558,
+    "deadline_miss": false,
+    "base": "Renode: 373 instructions, CPI=1"
+  },
+  "0.4": {
+    "freq_mhz": 445.6,
+    "time_us": 0.837,
+    "deadline_miss": false,
+    "base": "Renode: 373 instructions, CPI=1"
+  },
+  "0.2": {
+    "freq_mhz": 222.8,
+    "time_us": 1.674,
+    "deadline_miss": false,
+    "base": "Renode: 373 instructions, CPI=1"
+  },
+  "renode_base": {
+    "instructions": 373,
+    "cpi": 1,
+    "cycles": 373,
+    "base_freq_mhz": 1114.0,
+    "base_time_us": 0.335,
+    "python_mean_ns": 559.0,
+    "note": "Cycle counts derived from real Renode measurement (373 instructions, CPI=1). Frequency scaling is linear (standard DVFS model). Not measured on real DVFS hardware."
+  }
+}

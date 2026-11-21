@@ -1,0 +1,19 @@
+{
+  "experiment": "Cross-dataset zero-day generalization",
+  "train_dataset": "Edge-IIoTset (20,000 flows)",
+  "test_dataset": "CIC-IoT2023",
+  "edge_iiot": {
+    "n": 10000,
+    "false_allow_rate": 0.0,
+    "false_deny_rate": 0.0,
+    "accuracy": 1.0
+  },
+  "cic_iot": {
+    "n": 10000,
+    "false_allow_rate": 0.3467,
+    "false_deny_rate": 0.0853,
+    "accuracy": 0.568
+  },
+  "interpretation": "Governance predicates trained on Edge-IIoTset (known IPs, standard ports) are applied to CIC-IoT2023 (different IP ranges, different attack types). False-allow rate on unseen data measures generalization. If predicates are too specific to Edge-IIoTset (e.g., known IP list), false-allow will be high on CIC. This demonstrates the need for deployment-specific calibration.",
+  "limitations": "Predicate mapping is a construct. CIC column names may differ from Edge-IIoTset. Label encoding may need normalization. This is a preliminary cross-dataset test, not a validated generalization study."
+}

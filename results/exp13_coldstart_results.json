@@ -1,0 +1,9 @@
+{
+  "experiment": "Cold-start & initialization window vulnerability",
+  "n_trials": 100,
+  "packets_per_trial": 50,
+  "leaked_during_startup": 0,
+  "all_fail_closed": true,
+  "boot_to_enforcement_ms": 0.975,
+  "conclusion": "Fail-closed during startup: 0 packets leaked in 100 trials. Governance initializes before any traffic is admitted. Boot-to-enforcement: 0.975 ms."
+}

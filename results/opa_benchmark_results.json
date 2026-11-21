@@ -1,0 +1,12 @@
+{
+  "n_operations": 500,
+  "inprocess_governance_ms_total": 0.462,
+  "inprocess_per_decision_us": 0.924,
+  "inprocess_throughput_ops_per_s": 1081782.8,
+  "opa_cli_ms_total": 52491.667,
+  "opa_per_decision_us": 104983.334,
+  "opa_throughput_ops_per_s": 9.5,
+  "opa_success_count": 500,
+  "speedup": 113569.2,
+  "note": "OPA measured via CLI eval (includes process startup + file I/O per call). In-process measured via direct Python evaluation. This is an indicative comparison, not a controlled benchmark. OPA's production deployment uses a long-running server (lower per-call overhead than CLI)."
+}

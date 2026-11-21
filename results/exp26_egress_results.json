@@ -1,0 +1,9 @@
+{
+  "experiment": "Zero raw-data egress (federated/local-first compliance)",
+  "n_trials": 10,
+  "raw_payload_bytes": 1024,
+  "governed_payload_bytes": 64,
+  "data_reduction": 0.9375,
+  "pii_leaked": false,
+  "conclusion": "Governance reduces payload 93.75% (1024 -> 64 bytes). No raw sensor data or PII egresses the edge node. Only anonymized feature vectors traverse the wire. Federated/local-first compliance satisfied."
+}

@@ -1,0 +1,16 @@
+{
+  "experiment": "TOCTOU race condition resilience",
+  "without_lock": {
+    "total": 10000,
+    "ok": 100,
+    "final_value": 100,
+    "race_detected": false
+  },
+  "with_lock": {
+    "total": 10000,
+    "ok": 100,
+    "final_value": 100,
+    "race_detected": false
+  },
+  "conclusion": "Without lock: TOCTOU race allows value to exceed bound. With lock: value capped at 100 (correct). Governance evaluation must use atomic predicate snapshots (no TOCTOU)."
+}

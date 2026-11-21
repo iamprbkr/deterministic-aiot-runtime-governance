@@ -1,0 +1,8 @@
+{
+  "experiment": "Supply chain & container/model integrity attestation",
+  "n_trials": 10,
+  "n_detected": 10,
+  "all_detected": true,
+  "digest_always_differs": true,
+  "conclusion": "All 10 tampering attempts detected (digest mismatch + behavioural divergence). Supply-chain integrity enforced by both SHA-256 (byte identity) and M3 (behavioural consistency). Sub-ULP perturbations (1e-7) may evade both; larger perturbations (1e-3) are always detected."
+}

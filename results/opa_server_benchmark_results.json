@@ -1,0 +1,8 @@
+{
+  "n_operations": 500,
+  "inprocess_per_decision_us": 21.524,
+  "opa_server_per_decision_us": 2056526.26,
+  "opa_success_count": 500,
+  "speedup": 95546.6,
+  "note": "OPA measured via HTTP (includes JSON serialization + IPC + network loopback). In-process measured via direct Python evaluation. OPA server mode (long-running process) is more representative than CLI mode but still includes HTTP overhead. Production OPA deployments typically use a sidecar with local socket (lower overhead than HTTP/TCP)."
+}

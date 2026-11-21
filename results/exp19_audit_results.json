@@ -1,0 +1,12 @@
+{
+  "experiment": "Tamper-evident audit logging & forensic overhead",
+  "n_entries": 10000,
+  "storage_latency_ms_per_entry": 1.0,
+  "total_time_ms": 21832.82,
+  "per_entry_us": 2183.282,
+  "throughput_entries_per_s": 458.0,
+  "chain_intact": true,
+  "tamper_detected": true,
+  "conclusion": "Hash-chained audit log: 10000 entries in 21832.8ms (2183.282 us/entry including 1.0ms flash write). Chain integrity verified. Tamper detection: 100% (any modification breaks the chain).",
+  "note": "Simulated flash storage latency (1ms/write). Real IoT flash may vary (0.1-10ms)."
+}

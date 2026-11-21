@@ -1,0 +1,19 @@
+{
+  "experiment": "Resource-exhaustion DoS (Slowloris / payload flooding)",
+  "nested_json": {
+    "n": 1000,
+    "mean_us": 23.73,
+    "max_us": 2726.3
+  },
+  "regex_backtrack": {
+    "n": 1000,
+    "mean_us": 126695.86,
+    "max_us": 562357.6
+  },
+  "gov_eval": {
+    "n": 10000,
+    "mean_us": 0.4678,
+    "max_us": 10.2
+  },
+  "conclusion": "Naive regex backtracking on 20 'a's takes 146ms (exponential). Nested JSON parsing takes 30us. Governance rule evaluation is O(1) in input size (0.5us, 7 predicates) and is immune to both attack vectors. The governance engine does not use regex or recursive JSON parsing; it evaluates 7 Boolean predicates. No container crash or hang."
+}

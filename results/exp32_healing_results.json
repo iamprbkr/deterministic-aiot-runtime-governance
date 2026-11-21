@@ -1,0 +1,8 @@
+{
+  "experiment": "Closed-loop self-healing & automated remediation rollback",
+  "n_trials": 20,
+  "mean_mttq_ms": 0.273,
+  "mean_mttr_ms": 2.682,
+  "max_mttr_ms": 4.987,
+  "conclusion": "Self-healing: quarantine in <0.5ms, recovery in <5ms. Fail-closed during quarantine (no traffic leak). Post-recovery: normal operation restored. Simulated; real recovery requires state restoration and policy re-evaluation."
+}

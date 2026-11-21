@@ -1,0 +1,12 @@
+{
+  "experiment": "Low-and-slow stealth attack detection (temporal window integrity)",
+  "n_requests": 60,
+  "duration_simulated": "60 minutes (1 request/min)",
+  "unique_endpoints_threshold": 10,
+  "stateful_detections": 50,
+  "stateful_detection_rate": 0.8333,
+  "single_packet_detections": 0,
+  "single_packet_detection_rate": 0.0,
+  "conclusion": "Stateful tracking detects 50/60 requests (83.3%) as suspicious after 10 unique endpoints. Single-packet inspection detects 0%. Demonstrates that temporal window integrity (M4/F_k) catches low-and-slow attacks that per-request checks miss.",
+  "note": "Simulated with synthetic request log. Not a real network trace."
+}

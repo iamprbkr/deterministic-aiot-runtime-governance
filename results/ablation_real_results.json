@@ -1,0 +1,45 @@
+{
+  "ablation": [
+    {
+      "config": "Full admission rule G_k (all mechanisms)",
+      "false_allow_rate": 0.0,
+      "false_deny_rate": 0.0,
+      "latency_mean_ms": 0.2316,
+      "recovery": "fail-closed",
+      "status": "measured (synthetic, seed 42)"
+    },
+    {
+      "config": "Minus M1 (no policy selection)",
+      "false_allow_rate": 0.797,
+      "false_deny_rate": 0.0,
+      "latency_mean_ms": 0.2316,
+      "recovery": "wrong-context admission",
+      "status": "measured (synthetic, seed 42)"
+    },
+    {
+      "config": "Minus M2 (no latency shedding)",
+      "false_allow_rate": 0.0,
+      "false_deny_rate": 0.7619,
+      "latency_mean_ms": 4.839,
+      "recovery": "queue growth / deadline miss",
+      "status": "measured (synthetic, seed 42)"
+    },
+    {
+      "config": "Minus M3 (no attestation)",
+      "false_allow_rate": 1.0,
+      "false_deny_rate": 0.0,
+      "latency_mean_ms": 0.2316,
+      "recovery": "silent drift admitted",
+      "status": "measured (synthetic, seed 42)"
+    },
+    {
+      "config": "Minus M4 (no causal gate)",
+      "false_allow_rate": 0.5,
+      "false_deny_rate": 0.0,
+      "latency_mean_ms": 0.2316,
+      "recovery": "100% replay acceptance",
+      "status": "measured (synthetic, seed 42)"
+    }
+  ],
+  "note": "All values computed by executing each configuration on the synthetic corpus (seed 42). Not empirical deployment measurements."
+}

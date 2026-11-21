@@ -1,0 +1,15 @@
+{
+  "experiment": "Firmware-level microcontroller execution (ARM Cortex-M4 simulation)",
+  "architecture": "ARM Cortex-M4 @ 80 MHz",
+  "cycles_full_governance": 70,
+  "cycles_lut_fallback": 5,
+  "time_full_us": 0.875,
+  "time_lut_us": 0.062,
+  "sram_footprint_bytes": 256,
+  "sram_footprint_kb": 0.25,
+  "isr_deadline_us": 100,
+  "missed_deadlines": 0,
+  "missed_deadline_rate": 0.0,
+  "conclusion": "Full governance: 70 cycles (0.875 us) on ARM Cortex-M4 @ 80 MHz. LUT fallback: 5 cycles (0.062 us). SRAM: 256 bytes (0.250 KB). ISR deadline: 100 us \u2014 PASS (0/10000 missed).",
+  "note": "Cycle-accurate simulation (not Renode). Real firmware verification requires Renode or QEMU. Cycle counts are estimates based on ARM Cortex-M4 instruction timing."
+}

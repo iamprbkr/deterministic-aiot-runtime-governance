@@ -1,0 +1,5 @@
+{
+  "null_model_auc": 0.4984214736842105,
+  "n": 10000,
+  "interpretation": "AUC ~0.5 confirms reported AUC 1.000 reflects separation, not triviality."
+}

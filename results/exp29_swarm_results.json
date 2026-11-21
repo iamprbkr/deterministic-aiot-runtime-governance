@@ -1,0 +1,11 @@
+{
+  "experiment": "Multi-agent collusion & coordinated botnet swarm",
+  "n_agents": 50,
+  "requests_per_agent": 20,
+  "total_requests": 1000,
+  "unique_endpoints_accessed": 30,
+  "swarm_detections": 975,
+  "detection_rate": 0.975,
+  "per_agent_detection": 0,
+  "conclusion": "Global state tracking detects 975/1000 requests (97.5%) as swarm pattern after 25 unique endpoints. Per-agent inspection would detect 0%. Demonstrates multi-agent collusion detection via shared governance state."
+}

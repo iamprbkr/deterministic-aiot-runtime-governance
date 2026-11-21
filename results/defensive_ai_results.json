@@ -1,0 +1,34 @@
+{
+  "scenario": "AI-generated firewall rules (500 legitimate, 300 clearly adversarial, 200 ambiguous)",
+  "n_rules": 1000,
+  "full_governance": {
+    "n": 1000,
+    "TP": 470,
+    "FP": 25,
+    "TN": 475,
+    "FN": 30,
+    "false_allow_rate": 0.06,
+    "false_deny_rate": 0.05,
+    "accuracy": 0.945
+  },
+  "no_governance": {
+    "n": 1000,
+    "TP": 0,
+    "FP": 0,
+    "TN": 500,
+    "FN": 500,
+    "false_allow_rate": 1.0,
+    "false_deny_rate": 0.0,
+    "accuracy": 0.5
+  },
+  "adversarial_predicate_failures": {
+    "A": 0.0,
+    "P": 0.54,
+    "F": 0.0,
+    "C": 0.0,
+    "B": 0.94,
+    "I": 0.0,
+    "D": 0.0
+  },
+  "limitations": "Simulated scenario with constructed overlap. Not a real IDS or firewall. Demonstrates the admission rule's ability to govern AI-generated security operations under ambiguous conditions."
+}

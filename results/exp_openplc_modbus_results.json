@@ -1,0 +1,21 @@
+{
+  "transactions": 5000,
+  "allowed": 4984,
+  "denied": 16,
+  "per_type": {
+    "sensor_read": {
+      "total": 3478,
+      "allowed": 3478
+    },
+    "actuator_write": {
+      "total": 1522,
+      "allowed": 1506
+    }
+  },
+  "false_allow_rate": 0.0,
+  "false_deny_rate": 0.0,
+  "unsafe_commands_total": 16,
+  "unsafe_commands_denied": 16,
+  "conclusion": "Modbus/TCP governance: all unsafe actuator commands (temp > 80C) denied. Safe commands allowed. Cyber-physical safety invariant enforced at the communication boundary.",
+  "note": "Simulated Modbus/TCP using pymodbus data structures (not real OpenPLC runtime). OpenPLC Editor v4.3.5 available for program development. Runtime requires Docker (not available in current environment). pymodbus v3.16.2 used for Modbus data structure simulation."
+}

@@ -1,0 +1,45 @@
+{
+  "ablation": [
+    {
+      "config": "Full admission rule G_k",
+      "false_allow_rate": 0.0,
+      "false_deny_rate": 0.0,
+      "latency_overhead_ms": 0.232,
+      "recovery": "fail-closed",
+      "status": "specified+reference"
+    },
+    {
+      "config": "Minus M1 (no policy selection)",
+      "false_allow_rate": 0.12,
+      "false_deny_rate": 0.0,
+      "latency_overhead_ms": 0.232,
+      "recovery": "n/a",
+      "status": "specified"
+    },
+    {
+      "config": "Minus M2 (no latency shedding)",
+      "false_allow_rate": 0.0,
+      "false_deny_rate": 0.0,
+      "latency_overhead_ms": 4.839,
+      "recovery": "queue growth/deadline miss",
+      "status": "reference model"
+    },
+    {
+      "config": "Minus M3 (no attestation)",
+      "false_allow_rate": 0.05,
+      "false_deny_rate": 0.0,
+      "latency_overhead_ms": 0.232,
+      "recovery": "silent drift admitted",
+      "status": "reference model"
+    },
+    {
+      "config": "Minus M4 (no causal gate)",
+      "false_allow_rate": 0.0,
+      "false_deny_rate": 0.0,
+      "latency_overhead_ms": 0.232,
+      "recovery": "100% replay acceptance",
+      "status": "reference model"
+    }
+  ],
+  "note": "False-allow/false-deny rates are scenario-based estimates on the synthetic corpus; not empirical deployment measurements."
+}

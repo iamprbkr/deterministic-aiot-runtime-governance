@@ -1,0 +1,35 @@
+[
+  {
+    "dataset": "TON_IoT",
+    "total": 20000,
+    "attacks": 15263,
+    "normal": 4737,
+    "false_allow": 2135,
+    "false_allow_rate": 13.99,
+    "false_deny": 0,
+    "false_deny_rate": 0.0,
+    "accuracy": 89.33
+  },
+  {
+    "dataset": "CSIC 2010",
+    "total": 20000,
+    "attacks": 8247,
+    "normal": 11753,
+    "false_allow": 8108,
+    "false_allow_rate": 98.31,
+    "false_deny": 0,
+    "false_deny_rate": 0.0,
+    "accuracy": 59.46
+  },
+  {
+    "dataset": "IDS2025",
+    "total": 20000,
+    "attacks": 14357,
+    "normal": 5643,
+    "false_allow": 49,
+    "false_allow_rate": 0.34,
+    "false_deny": 4377,
+    "false_deny_rate": 77.57,
+    "accuracy": 77.87
+  }
+]

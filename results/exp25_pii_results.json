@@ -1,0 +1,74 @@
+{
+  "experiment": "Dynamic PII / sensitive payload redaction",
+  "fields_tested": [
+    "ssn",
+    "credit_card",
+    "email",
+    "phone",
+    "address",
+    "biometric_id",
+    "medical_id",
+    "gps_location",
+    "device_serial"
+  ],
+  "all_redacted": true,
+  "any_leaked": false,
+  "n_fields": 9,
+  "details": [
+    {
+      "field": "ssn",
+      "is_pii": true,
+      "redacted": true,
+      "leaked": false
+    },
+    {
+      "field": "credit_card",
+      "is_pii": true,
+      "redacted": true,
+      "leaked": false
+    },
+    {
+      "field": "email",
+      "is_pii": true,
+      "redacted": true,
+      "leaked": false
+    },
+    {
+      "field": "phone",
+      "is_pii": true,
+      "redacted": true,
+      "leaked": false
+    },
+    {
+      "field": "address",
+      "is_pii": true,
+      "redacted": true,
+      "leaked": false
+    },
+    {
+      "field": "biometric_id",
+      "is_pii": true,
+      "redacted": true,
+      "leaked": false
+    },
+    {
+      "field": "medical_id",
+      "is_pii": true,
+      "redacted": true,
+      "leaked": false
+    },
+    {
+      "field": "gps_location",
+      "is_pii": true,
+      "redacted": true,
+      "leaked": false
+    },
+    {
+      "field": "device_serial",
+      "is_pii": true,
+      "redacted": true,
+      "leaked": false
+    }
+  ],
+  "conclusion": "All 9 PII field types are redacted by the governance boundary. No sensitive payload reaches the web tier. Taint tracking verifies zero unauthorized field leakage. Privacy by design is satisfied."
+}

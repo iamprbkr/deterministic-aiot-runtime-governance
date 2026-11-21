@@ -1,0 +1,27 @@
+{
+  "transactions": 500,
+  "allowed": 480,
+  "denied": 20,
+  "unsafe_total": 20,
+  "unsafe_denied": 20,
+  "per_type": {
+    "read": {
+      "total": 348,
+      "allowed": 348
+    },
+    "write": {
+      "total": 152,
+      "allowed": 132
+    }
+  },
+  "false_allow_rate": 0.0,
+  "false_deny_rate": 0.0,
+  "unsafe_commands_total": 20,
+  "unsafe_commands_denied": 20,
+  "mean_response_us": 539.54,
+  "median_response_us": 452.25,
+  "max_response_us": 4244.5,
+  "min_response_us": 4.1,
+  "conclusion": "Real Modbus/TCP: governance enforced at communication boundary. All unsafe actuator commands denied. Safe commands allowed with measured response times.",
+  "note": "Real Modbus/TCP server (pymodbus v3.16.2) on localhost:5020. Real sensor data from Edge-IIoTset. Governance evaluated on each Modbus transaction. Response times include actual Modbus I/O."
+}

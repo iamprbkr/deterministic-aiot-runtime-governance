@@ -1,0 +1,71 @@
+{
+  "dataset": "Edge-IIoTset (ML subset, stratified sample)",
+  "n_sampled": 50000,
+  "n_normal": 7500,
+  "n_attack": 42500,
+  "predicate_mapping": {
+    "A_k": "source IP in top-100 known devices (from normal traffic)",
+    "P_k": "destination port in standard set {80,443,1883,502,53,22,21,25,110,143,3306,5432}",
+    "F_k": "always True (no temporal ordering in ML dataset)",
+    "C_k": "packet length in (0, 1500)",
+    "B_k": "ip.len < 1400 (simple threshold)",
+    "I_k": "always True (no model artefact)",
+    "D_k": "always True (no budget constraint in dataset)"
+  },
+  "full_governance": {
+    "n": 50000,
+    "TP_deny_attack": 42489,
+    "FP_deny_normal": 4379,
+    "TN_allow_normal": 3121,
+    "FN_allow_attack": 11,
+    "false_allow_rate": 0.0003,
+    "false_deny_rate": 0.5839,
+    "accuracy": 0.9122
+  },
+  "baseline_no_governance": {
+    "n": 50000,
+    "TP_deny_attack": 0,
+    "FP_deny_normal": 0,
+    "TN_allow_normal": 7500,
+    "FN_allow_attack": 42500,
+    "false_allow_rate": 1.0,
+    "false_deny_rate": 0.0,
+    "accuracy": 0.15
+  },
+  "baseline_static_acl": {
+    "n": 50000,
+    "TP_deny_attack": 42489,
+    "FP_deny_normal": 4379,
+    "TN_allow_normal": 3121,
+    "FN_allow_attack": 11,
+    "false_allow_rate": 0.0003,
+    "false_deny_rate": 0.5839,
+    "accuracy": 0.9122
+  },
+  "per_predicate_failure_rate": {
+    "A": 0.4258,
+    "P": 0.6724,
+    "F": 0.0,
+    "C": 0.0,
+    "B": 0.0,
+    "I": 0.0,
+    "D": 0.0
+  },
+  "per_attack_false_allow": {
+    "Backdoor": 0.0,
+    "DDoS_HTTP": 0.0,
+    "DDoS_ICMP": 0.0,
+    "DDoS_TCP": 0.0,
+    "DDoS_UDP": 0.0,
+    "Fingerprinting": 0.0,
+    "MITM": 0.0,
+    "Password": 0.0,
+    "Port_Scanning": 0.0003,
+    "Ransomware": 0.0,
+    "SQL_injection": 0.0,
+    "Uploading": 0.0,
+    "Vulnerability_scanner": 0.0003,
+    "XSS": 0.0028
+  },
+  "limitations": "Predicate mapping is a construct on available features; not a validated deployment mapping. F_k and D_k are trivially True (no temporal/budget data in the ML dataset). Results characterise the governance rule's behaviour on this dataset, not deployment performance."
+}

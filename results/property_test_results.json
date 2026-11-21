@@ -1,0 +1,38 @@
+{
+  "properties": {
+    "P1_conflicting_predicates": {
+      "cases": 10000,
+      "failures": 0
+    },
+    "P2_indeterminate_never_allow": {
+      "cases": 10000,
+      "failures": 0
+    },
+    "P3_determinism": {
+      "cases": 10000,
+      "failures": 0
+    },
+    "P4_policy_transition_binding": {
+      "cases": 10000,
+      "failures": 0
+    },
+    "P5_P6_replay_causal_gate": {
+      "cases": 20000,
+      "failures": 0
+    },
+    "P7_fail_closed_on_state_loss": {
+      "cases": 10000,
+      "failures": 0
+    },
+    "P8_fallback_safety": {
+      "cases": 20000,
+      "failures": 0
+    },
+    "P9_concurrency_no_leakage": {
+      "cases": 20000,
+      "failures": 0
+    }
+  },
+  "total_cases": 110000,
+  "total_failures": 0
+}

@@ -1,0 +1,73 @@
+{
+  "conditions": {
+    "loss0_lat0_jit0_reorder0": {
+      "condition": {
+        "loss": 0.0,
+        "latency_ms": 0,
+        "jitter_ms": 0,
+        "reorder_pct": 0.0
+      },
+      "n_commands": 5000,
+      "delivered": 5000,
+      "delivery_rate": 1.0,
+      "stale_rejected": 0,
+      "stale_rejection_rate": 0.0,
+      "legitimate_accepted": 5000,
+      "legitimate_acceptance_rate": 1.0,
+      "session_completion_rate": 1.0,
+      "state_sync_drift_ms": 0.0
+    },
+    "loss5_lat50_jit10_reorder0": {
+      "condition": {
+        "loss": 0.05,
+        "latency_ms": 50,
+        "jitter_ms": 10,
+        "reorder_pct": 0.0
+      },
+      "n_commands": 5000,
+      "delivered": 4736,
+      "delivery_rate": 0.9472,
+      "stale_rejected": 0,
+      "stale_rejection_rate": 0.0,
+      "legitimate_accepted": 5000,
+      "legitimate_acceptance_rate": 1.0,
+      "session_completion_rate": 0.9472,
+      "state_sync_drift_ms": 50.33
+    },
+    "loss10_lat100_jit20_reorder5": {
+      "condition": {
+        "loss": 0.1,
+        "latency_ms": 100,
+        "jitter_ms": 20,
+        "reorder_pct": 0.05
+      },
+      "n_commands": 5000,
+      "delivered": 4494,
+      "delivery_rate": 0.8988,
+      "stale_rejected": 0,
+      "stale_rejection_rate": 0.0,
+      "legitimate_accepted": 5000,
+      "legitimate_acceptance_rate": 1.0,
+      "session_completion_rate": 0.8988,
+      "state_sync_drift_ms": 95.73
+    },
+    "loss15_lat200_jit40_reorder10": {
+      "condition": {
+        "loss": 0.15,
+        "latency_ms": 200,
+        "jitter_ms": 40,
+        "reorder_pct": 0.1
+      },
+      "n_commands": 5000,
+      "delivered": 4277,
+      "delivery_rate": 0.8554,
+      "stale_rejected": 184,
+      "stale_rejection_rate": 1.0,
+      "legitimate_accepted": 4816,
+      "legitimate_acceptance_rate": 1.0,
+      "session_completion_rate": 0.8554,
+      "state_sync_drift_ms": 189.9
+    }
+  },
+  "note": "Simulated network degradation via tc netem parameters. Not measured on real network. Governance decision logic (M4 causal gate) evaluated on degraded inputs."
+}

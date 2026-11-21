@@ -1,0 +1,16 @@
+{
+  "experiment": "Property-based fuzzing & grammar-driven input generation",
+  "n_cases": 100000,
+  "failures": 0,
+  "edge_cases_single_pred": 5406,
+  "single_pred_failure_counts": {
+    "A": 776,
+    "P": 760,
+    "F": 729,
+    "C": 776,
+    "B": 827,
+    "I": 778,
+    "D": 760
+  },
+  "conclusion": "100000 fuzzed cases, 0 invariant violations. 5406 single-predicate edge cases tested. Governance invariants hold across all generated inputs."
+}

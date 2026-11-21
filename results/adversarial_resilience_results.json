@@ -1,0 +1,35 @@
+{
+  "M3_evasion": {
+    "n_corrupt": 500,
+    "evasion_scores_below_threshold": 500,
+    "detected_by_M3": 0,
+    "evasion_success_rate": 1.0,
+    "note": "Evasion succeeds if attacker can reduce divergence below threshold. M3 uses L_infinity (max), making evasion harder than with mean. Mitigation: use multiple thresholds and input subsets."
+  },
+  "governor_targeting": {
+    "n_crafted": 1000,
+    "passed_all_predicates": 325,
+    "pass_rate": 0.325,
+    "note": "Governor targeting succeeds only if attacker can craft inputs satisfying all 7 predicates simultaneously. In practice, C_k and B_k depend on real feature values the attacker cannot fully control."
+  },
+  "M4_replay": {
+    "duplicate_rejection_rate": 1.0,
+    "clock_drift_rejection_rate": 0.9186,
+    "note": "Duplicate commands: 100% rejected (exact-next-sequence rule). Clock drift: rejected if outside 300s freshness window."
+  },
+  "M2_overload": {
+    "n_arrivals": 100000,
+    "arrival_rate_mean": 49.98,
+    "service_rate": 10,
+    "queue_capacity": 1000,
+    "max_queue_depth": 1000,
+    "saturation_events": 99976,
+    "saturation_rate": 0.9998,
+    "note": "Under flood (mean 50 arrivals/step, service 10), queue saturates. M2 sheds load (LUT fallback) to maintain decision throughput. Without shedding, queue grows unbounded."
+  },
+  "M1_policy_evasion": {
+    "n_attempts": 1000,
+    "jurisdiction_mismatch_rate": 0.737,
+    "note": "Policy evasion succeeds if an attacker can claim a weaker jurisdiction. Mitigation: jurisdiction is derived from authenticated deployment context, not from the request."
+  }
+}

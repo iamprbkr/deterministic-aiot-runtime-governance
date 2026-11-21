@@ -1,0 +1,16 @@
+{
+  "model": "MLP (12->32->16->2)",
+  "n_train": 2400,
+  "n_test": 600,
+  "quantization": "int8 (256 levels, post-training)",
+  "accuracy_ref": 0.9317,
+  "accuracy_quantized": 0.475,
+  "accuracy_drop": 0.4567,
+  "delta_infinity": 1.0,
+  "threshold": 0.008,
+  "within_bound": false,
+  "sha256_ref": "49b2ea30ab4263cc3c4e1b7c1f791e69f76de9c805f5ee1564611670c0690104",
+  "sha256_quantized": "22d9375c3506355c3329d8d08a4bd139e07904a921501aad77da5c2a5056b71d",
+  "digests_match": false,
+  "interpretation": "SHA-256 rejects the quantized model (digests differ: 49b2ea30 vs 22d9375c). M3 computes delta=1.0 vs threshold 0.008 -> QUARANTINE. Accuracy drop: 0.4567. Demonstrates M3 on a real neural network: it detects behavioural divergence that exceeds tolerance (delta=1.0 > 0.008), complementing SHA-256 which only detects byte changes. Not evidence of generalization to production models."
+}

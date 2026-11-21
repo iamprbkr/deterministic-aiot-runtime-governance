@@ -1,0 +1,79 @@
+{
+  "experiment": "Deterministic invariant verification (zero-bypass audit)",
+  "single_violations": {
+    "A": {
+      "verdict": "QUARANTINE",
+      "blocked": true
+    },
+    "P": {
+      "verdict": "QUARANTINE",
+      "blocked": true
+    },
+    "F": {
+      "verdict": "QUARANTINE",
+      "blocked": true
+    },
+    "C": {
+      "verdict": "QUARANTINE",
+      "blocked": true
+    },
+    "B": {
+      "verdict": "QUARANTINE",
+      "blocked": true
+    },
+    "I": {
+      "verdict": "QUARANTINE",
+      "blocked": true
+    },
+    "D": {
+      "verdict": "QUARANTINE",
+      "blocked": true
+    }
+  },
+  "unknown_test": {
+    "A": {
+      "verdict": "QUARANTINE",
+      "blocked": true
+    },
+    "P": {
+      "verdict": "QUARANTINE",
+      "blocked": true
+    },
+    "F": {
+      "verdict": "QUARANTINE",
+      "blocked": true
+    },
+    "C": {
+      "verdict": "QUARANTINE",
+      "blocked": true
+    },
+    "B": {
+      "verdict": "QUARANTINE",
+      "blocked": true
+    },
+    "I": {
+      "verdict": "QUARANTINE",
+      "blocked": true
+    },
+    "D": {
+      "verdict": "QUARANTINE",
+      "blocked": true
+    }
+  },
+  "combination_cases": {
+    "total": 120,
+    "failures": 0
+  },
+  "benign": {
+    "total": 10000,
+    "allowed": 10000,
+    "false_positive": 0,
+    "false_positive_rate": 0.0
+  },
+  "adversarial": {
+    "total": 7000,
+    "blocked": 7000,
+    "block_rate": 1.0
+  },
+  "conclusion": "100% block rate for all single-predicate, combination, and UNKNOWN-predicate cases. 0% false-positive on benign (all-True) inputs. The admission rule is fail-closed: no operation dispatches unless all 7 predicates hold."
+}

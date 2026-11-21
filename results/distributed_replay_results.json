@@ -1,0 +1,12 @@
+{
+  "nodes": 5,
+  "stale_cases": 5000,
+  "stale_rejected": 5000,
+  "stale_rejection_pct": 100.0,
+  "legitimate_cases": 5000,
+  "legitimate_accepted": 5000,
+  "legitimate_acceptance_pct": 100.0,
+  "partition_rejected_while_partitioned": 5000,
+  "post_recovery_legitimate_accepted": 5000,
+  "note": "Simulated (seed 42). Not a deployed cluster; no authenticated epochs or durable state. Labels as simulated in manuscript."
+}

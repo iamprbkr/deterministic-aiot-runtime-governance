@@ -1,0 +1,51 @@
+{
+  "scenario": "HTTP/API traffic governance (5,000 benign, 5,000 malicious)",
+  "n_requests": 10000,
+  "full_governance": {
+    "n": 10000,
+    "TP": 4007,
+    "FP": 1167,
+    "TN": 3833,
+    "FN": 993,
+    "false_allow_rate": 0.1986,
+    "false_deny_rate": 0.2334,
+    "accuracy": 0.784
+  },
+  "no_governance": {
+    "n": 10000,
+    "TP": 0,
+    "FP": 0,
+    "TN": 5000,
+    "FN": 5000,
+    "false_allow_rate": 1.0,
+    "false_deny_rate": 0.0,
+    "accuracy": 0.5
+  },
+  "static_waf": {
+    "n": 10000,
+    "TP": 2800,
+    "FP": 482,
+    "TN": 4518,
+    "FN": 2200,
+    "false_allow_rate": 0.44,
+    "false_deny_rate": 0.0964,
+    "accuracy": 0.7318
+  },
+  "malicious_predicate_failures": {
+    "A": 0.8014,
+    "P": 0.2092,
+    "F": 0.0,
+    "C": 0.3718,
+    "B": 0.1882,
+    "I": 0.0,
+    "D": 0.0
+  },
+  "per_attack_false_allow": {
+    "sqli": 0.0,
+    "xss": 0.0,
+    "bruteforce": 0.0,
+    "path_traversal": 0.0,
+    "stealthy": 1.0
+  },
+  "limitations": "Synthetic web traffic; not real HTTP logs. Demonstrates the admission rule on web-specific predicates."
+}

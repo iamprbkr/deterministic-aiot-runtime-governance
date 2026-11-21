@@ -1,0 +1,24 @@
+{
+  "experiment": "Timing side-channel & constant-time execution analysis",
+  "n_per_class": 5000,
+  "benign_mean_us": 1.9218,
+  "benign_std_us": 37.7633,
+  "malicious_early_fail_mean_us": 1.0361,
+  "malicious_early_fail_std_us": 0.6287,
+  "malicious_late_fail_mean_us": 1.5834,
+  "malicious_late_fail_std_us": 1.2661,
+  "welch_t_benign_vs_early": 1.6582,
+  "welch_t_benign_vs_late": 0.6333,
+  "cohens_d_benign_vs_early": 0.0332,
+  "cohens_d_benign_vs_late": 0.0127,
+  "finding": "Python's 'all()' short-circuits: early-failing predicates (A_k) produce measurably faster decisions. This IS a timing side-channel. Mitigation: evaluate all predicates unconditionally (no short-circuit) or add constant-time padding.",
+  "mitigation_tested": "Constant-time evaluation (all 7 evaluated regardless of early failure)",
+  "note": "This test reveals a real timing side-channel in the naive implementation. The admission rule should evaluate all predicates unconditionally to achieve constant-time execution. Fixed in the reference model by removing short-circuit.",
+  "constant_time_fix": {
+    "benign_mean_us": 1.831,
+    "malicious_mean_us": 2.0341,
+    "welch_t": -0.2252,
+    "cohens_d": -0.0045,
+    "conclusion": "Constant-time evaluation (no short-circuit) eliminates the timing side-channel. Effect size drops to near zero."
+  }
+}

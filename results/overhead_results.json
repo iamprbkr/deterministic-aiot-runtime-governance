@@ -1,0 +1,12 @@
+{
+  "n_operations": 10000,
+  "passthrough_ms_total": 0.836,
+  "full_governance_ms_total": 5.536,
+  "governance_overhead_ms_total": 4.7,
+  "governance_overhead_per_decision_us": 0.47,
+  "m3_attestation_ms_total": 132.402,
+  "m3_per_decision_us": 13.24,
+  "m4_causal_gate_ms_total": 21.509,
+  "m4_per_decision_us": 2.151,
+  "note": "Measured on local machine (Python reference model, not Wasm). Representative of decision logic cost, not production runtime."
+}

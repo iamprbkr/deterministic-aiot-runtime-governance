@@ -1,0 +1,109 @@
+{
+  "steps": [
+    {
+      "step": 0,
+      "noise_level": 0.0,
+      "delta_infinity": 0.0,
+      "threshold": 0.008,
+      "decision": "ALLOW",
+      "accuracy_ref": 1.0,
+      "accuracy_degraded": 1.0,
+      "safety_invariant_enforced": true
+    },
+    {
+      "step": 1,
+      "noise_level": 0.5,
+      "delta_infinity": 0.671412,
+      "threshold": 0.008,
+      "decision": "QUARANTINE",
+      "accuracy_ref": 1.0,
+      "accuracy_degraded": 0.892,
+      "safety_invariant_enforced": true
+    },
+    {
+      "step": 2,
+      "noise_level": 1.0,
+      "delta_infinity": 0.848817,
+      "threshold": 0.008,
+      "decision": "QUARANTINE",
+      "accuracy_ref": 1.0,
+      "accuracy_degraded": 0.828,
+      "safety_invariant_enforced": true
+    },
+    {
+      "step": 3,
+      "noise_level": 1.5,
+      "delta_infinity": 0.981362,
+      "threshold": 0.008,
+      "decision": "QUARANTINE",
+      "accuracy_ref": 1.0,
+      "accuracy_degraded": 0.624,
+      "safety_invariant_enforced": true
+    },
+    {
+      "step": 4,
+      "noise_level": 2.0,
+      "delta_infinity": 0.9625,
+      "threshold": 0.008,
+      "decision": "QUARANTINE",
+      "accuracy_ref": 1.0,
+      "accuracy_degraded": 0.702,
+      "safety_invariant_enforced": true
+    },
+    {
+      "step": 5,
+      "noise_level": 2.5,
+      "delta_infinity": 0.989658,
+      "threshold": 0.008,
+      "decision": "QUARANTINE",
+      "accuracy_ref": 1.0,
+      "accuracy_degraded": 0.608,
+      "safety_invariant_enforced": true
+    },
+    {
+      "step": 6,
+      "noise_level": 3.0,
+      "delta_infinity": 0.997268,
+      "threshold": 0.008,
+      "decision": "QUARANTINE",
+      "accuracy_ref": 1.0,
+      "accuracy_degraded": 0.736,
+      "safety_invariant_enforced": true
+    },
+    {
+      "step": 7,
+      "noise_level": 3.5,
+      "delta_infinity": 0.984513,
+      "threshold": 0.008,
+      "decision": "QUARANTINE",
+      "accuracy_ref": 1.0,
+      "accuracy_degraded": 0.728,
+      "safety_invariant_enforced": true
+    },
+    {
+      "step": 8,
+      "noise_level": 4.0,
+      "delta_infinity": 0.999771,
+      "threshold": 0.008,
+      "decision": "QUARANTINE",
+      "accuracy_ref": 1.0,
+      "accuracy_degraded": 0.48,
+      "safety_invariant_enforced": true
+    },
+    {
+      "step": 9,
+      "noise_level": 4.5,
+      "delta_infinity": 0.999706,
+      "threshold": 0.008,
+      "decision": "QUARANTINE",
+      "accuracy_ref": 1.0,
+      "accuracy_degraded": 0.508,
+      "safety_invariant_enforced": true
+    }
+  ],
+  "n_steps": 10,
+  "n_quarantined": 9,
+  "first_quarantine_step": 1,
+  "conclusion": "M3 detects divergence at step 1 (noise level 0.5). Safety invariants remain enforced: 9/10 steps quarantined. Even as AI accuracy drops, the governance boundary prevents degraded models from executing.",
+  "note": "Simulated weight degradation on a logistic model. Not a real neural network poisoning attack."
+}
