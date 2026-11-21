@@ -6,9 +6,10 @@ OUTPUTS: results/cicids2018_results.json — 0% FA
 DATA TYPE: REAL (dataset)
 PAPER ALIGNMENT: RQ2
 """
-import json, numpy as np, pandas as pd
+import json, os, numpy as np, pandas as pd
 ROOT = r"."
-CSV = r".\integrated_ciciot2023_dataset\integrated_dataset_optimized\integrated_ids_intrusion_dataset.csv"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV = os.path.join(SCRIPT_DIR, "..", "..", "..", "integrated_ciciot2023_dataset", "integrated_dataset_optimized", "integrated_ids_intrusion_dataset.csv")
 
 df = pd.read_csv(CSV)
 print("Total rows:", len(df))

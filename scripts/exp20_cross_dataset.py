@@ -6,11 +6,12 @@ OUTPUTS: results/exp20_crossdataset_results.json
 DATA TYPE: REAL (datasets)
 PAPER ALIGNMENT: RQ2
 """
-import json, numpy as np, pandas as pd
+import json, os, numpy as np, pandas as pd
 ROOT = r"."
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Load Edge-IIoTset (training distribution)
-edge_path = r".\Edge-IIoTset\Edge-IIoTset dataset\Selected dataset for ML and DL\ML-EdgeIIoT-dataset.csv"
+edge_path = os.path.join(SCRIPT_DIR, "..", "..", "..", "Edge-IIoTset", "Edge-IIoTset dataset", "Selected dataset for ML and DL", "ML-EdgeIIoT-dataset.csv")
 edge = pd.read_csv(edge_path, usecols=['ip.src_host','tcp.dstport','tcp.len','Attack_label'], nrows=20000)
 print("Edge-IIoTset loaded:", len(edge))
 

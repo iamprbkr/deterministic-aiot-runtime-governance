@@ -6,9 +6,11 @@ OUTPUTS: results/ciciot_official_results.json
 DATA TYPE: REAL (dataset)
 PAPER ALIGNMENT: RQ2
 """
-import json, numpy as np, pandas as pd, glob, os
+import json, os, numpy as np, pandas as pd, glob, os
 ROOT = r"."
-CIC_DIR = r".\CIC-IoT2023 Official IoT Flow Feature Dataset"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+CIC_DIR = os.path.join(SCRIPT_DIR, "..", "..", "..", "CIC-IoT2023 Official IoT Flow Feature Dataset")
+CIC_DIR = os.path.normpath(CIC_DIR)
 
 files = sorted(glob.glob(os.path.join(CIC_DIR, "Merged*.csv")))
 print("Files found:", len(files))

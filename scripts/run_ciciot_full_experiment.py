@@ -6,9 +6,11 @@ OUTPUTS: results/ciciot_full_results.json — 74.13% FA
 DATA TYPE: REAL (dataset)
 PAPER ALIGNMENT: RQ2
 """
-import json, numpy as np, pandas as pd, glob, os
+import json, os, numpy as np, pandas as pd, glob, os
 ROOT = r"."
-CIC = r".\CIC_IOT_Dataset2023\CSV"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+CIC = os.path.join(SCRIPT_DIR, "..", "..", "..", "CIC_IOT_Dataset2023", "CSV")
+CIC = os.path.normpath(CIC)
 
 # Load benign + attack samples
 benign_files = glob.glob(os.path.join(CIC, "Benign_Final", "*.csv"))

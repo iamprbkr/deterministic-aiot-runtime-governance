@@ -6,8 +6,9 @@ OUTPUTS: results/exp_new_datasets.json
 DATA TYPE: REAL (datasets)
 PAPER ALIGNMENT: RQ2
 """
-import json, numpy as np, time
+import json, os, numpy as np, time
 ROOT = r"."
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 import pandas as pd
 
 def govern(preds):
@@ -19,7 +20,7 @@ def evaluate(preds):
 
 def run_ton_iot():
     print("=== TON_IoT ===")
-    df = pd.read_csv(ROOT.replace('deterministic-aiot-runtime-governance-fixed\\deterministic-aiot-runtime-governance-main', '') + 'train_test_network.csv')
+    df = pd.read_csv(os.path.join(SCRIPT_DIR, '..', '..', '..', 'train_test_network.csv'))
     # Sample 20k
     df = df.sample(n=min(20000, len(df)), random_state=42)
     print(f"Loaded {len(df)} rows")
@@ -69,7 +70,7 @@ def run_ton_iot():
 
 def run_csic():
     print("\n=== CSIC 2010 ===")
-    df = pd.read_csv(ROOT.replace('deterministic-aiot-runtime-governance-fixed\\deterministic-aiot-runtime-governance-main', '') + 'csic_database.csv')
+    df = pd.read_csv(os.path.join(SCRIPT_DIR, '..', '..', '..', 'csic_database.csv'))
     df = df.sample(n=min(20000, len(df)), random_state=42)
     print(f"Loaded {len(df)} rows")
     
@@ -116,7 +117,7 @@ def run_csic():
 
 def run_ids2025():
     print("\n=== IDS2025 ===")
-    df = pd.read_excel(ROOT.replace('deterministic-aiot-runtime-governance-fixed\\deterministic-aiot-runtime-governance-main', '') + 'IDS2025.xlsx')
+    df = pd.read_excel(os.path.join(SCRIPT_DIR, '..', '..', '..', 'IDS2025.xlsx'))
     df = df.sample(n=min(20000, len(df)), random_state=42)
     print(f"Loaded {len(df)} rows")
     

@@ -6,9 +6,10 @@ OUTPUTS: results/dnn_edgeiiot_results.json
 DATA TYPE: REAL (dataset)
 PAPER ALIGNMENT: RQ2
 """
-import json, numpy as np, pandas as pd
+import json, os, numpy as np, pandas as pd
 ROOT = r"."
-CSV = r".\DNN-EdgeIIoT-dataset\DNN-EdgeIIoT-dataset.csv"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV = os.path.join(SCRIPT_DIR, "..", "..", "..", "DNN-EdgeIIoT-dataset", "DNN-EdgeIIoT-dataset.csv")
 
 df = pd.read_csv(CSV)
 print("Total rows:", len(df))

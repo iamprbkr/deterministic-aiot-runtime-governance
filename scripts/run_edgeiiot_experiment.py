@@ -6,12 +6,16 @@ OUTPUTS: results/edgeiiot_results.json — 0.03% FA
 DATA TYPE: REAL (dataset)
 PAPER ALIGNMENT: RQ2
 """
-import json, hashlib
+import json, hashlib, os
 import numpy as np
 import pandas as pd
 
 ROOT = r"."
-CSV = r".\Edge-IIoTset\Edge-IIoTset dataset\Selected dataset for ML and DL\ML-EdgeIIoT-dataset.csv"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+# Dataset path: adjust to your local datasets directory
+DATASETS_DIR = os.path.join(SCRIPT_DIR, "..", "..", "..")
+CSV = os.path.join(DATASETS_DIR, "Edge-IIoTset", "Edge-IIoTset dataset", "Selected dataset for ML and DL", "ML-EdgeIIoT-dataset.csv")
+CSV = os.path.normpath(CSV)
 
 # Load and sample 50k stratified
 df = pd.read_csv(CSV)

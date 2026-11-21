@@ -1,4 +1,11 @@
-"""Benchmark OPA in server mode (HTTP) — more representative than CLI."""
+"""Benchmark OPA in server mode (HTTP) — more representative than CLI.
+
+PURPOSE: Benchmark Open Policy Agent (OPA) in server mode for comparison
+INPUTS: None (self-contained, requires OPA binary)
+OUTPUTS: results/opa_server_benchmark_results.json
+DATA TYPE: REAL (actual OPA HTTP API)
+PAPER ALIGNMENT: RQ4, comparison with OPA
+"""
 import json, time, subprocess, os, numpy as np, urllib.request, sys
 ROOT = r"."
 OPA = r".\AppData\Local\Temp\opencode\opa.exe"

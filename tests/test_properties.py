@@ -1,5 +1,11 @@
 """Property-based tests for the deterministic action-admissibility rule.
 
+PURPOSE: Property-based testing of governance invariants (9 properties, 110k cases)
+INPUTS: None (self-contained, generates random cases)
+OUTPUTS: results/property_test_results.json — 110,000 cases, 0 failures
+DATA TYPE: REAL (actual property-based testing)
+PAPER ALIGNMENT: RQ3, formal verification
+
 Properties tested (each run over >= 10,000 random cases):
   P1 Conflicting predicates: ALLOW iff all seven predicates hold.
   P2 Indeterminate evidence: any UNKNOWN predicate -> never ALLOW.

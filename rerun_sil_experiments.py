@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """Reproducible synthetic-input SIL harness for the AIoT governance prototype.
 
+PURPOSE: Main harness for M1-M4 governance mechanisms (synthetic data)
+INPUTS: CLI args (--seed, --requests, --models, --replays, --transitions, --output-dir)
+OUTPUTS: experiment_results.json, experiment_observations.csv
+DATA TYPE: SIMULATED (synthetic workloads, not real datasets or hardware)
+PAPER ALIGNMENT: RQ1 (M1 policy), RQ2 (M2 attestation), RQ3 (M3/M4 replay), RQ4 (governance)
+
 IMPORTANT SCOPE:
 - This script generates synthetic workloads. It does not load Edge-IIoTset,
   CIC-IoT2023, or HAI v23.05, and it does not execute a real WebAssembly runtime.

@@ -6,9 +6,10 @@ OUTPUTS: results/exp8_adversarial_results.json
 DATA TYPE: SIMULATED
 PAPER ALIGNMENT: RQ1
 """
-import json, numpy as np, pandas as pd
+import json, os, numpy as np, pandas as pd
 ROOT = r"."
-CSV = r".\Edge-IIoTset\Edge-IIoTset dataset\Selected dataset for ML and DL\ML-EdgeIIoT-dataset.csv"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV = os.path.join(SCRIPT_DIR, "..", "..", "..", "Edge-IIoTset", "Edge-IIoTset dataset", "Selected dataset for ML and DL", "ML-EdgeIIoT-dataset.csv")
 
 df = pd.read_csv(CSV, usecols=['ip.src_host','tcp.dstport','tcp.len','Attack_label'])
 normal = df[df['Attack_label']==0].sample(n=2000, random_state=42)
