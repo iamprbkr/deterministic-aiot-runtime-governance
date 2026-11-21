@@ -86,6 +86,7 @@ python3 scripts/exp20_cross_dataset.py
 python3 scripts/exp28_fuzzing.py                 # 100k fuzzed cases
 python3 scripts/openplc_modbus_real.py           # OpenPLC Modbus/TCP (500 transactions)
 python3 scripts/thermal_dvfs_real.py            # Thermal/DVFS analysis
+python3 scripts/full_architecture_experiment.py  # Full architecture (Wasm+TEE+Consensus+CircuitBreaker+KillSwitch+Audit)
 python3 scripts/gen_validation_figures_v2.py     # Regenerate figures
 ```
 
