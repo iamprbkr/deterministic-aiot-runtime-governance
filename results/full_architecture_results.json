@@ -1,0 +1,213 @@
+{
+  "experiment": "Full Architecture (Wasm + TEE + Consensus + Circuit Breaker + Kill Switch + Audit Ledger)",
+  "wasm": [
+    {
+      "name": "All true",
+      "preds": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "verdict": 1
+    },
+    {
+      "name": "One false (A)",
+      "preds": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "verdict": 0
+    },
+    {
+      "name": "One false (P)",
+      "preds": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "verdict": 0
+    },
+    {
+      "name": "Mixed",
+      "preds": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "verdict": 0
+    }
+  ],
+  "tee": {
+    "encrypt_decrypt_ok": true,
+    "signature": "b97d2501dacca6fd8ed36ad65831198e9281c08db1ec3583877a288f06efd600",
+    "note": "Software simulation (XOR + HMAC), not real TEE"
+  },
+  "consensus": [
+    {
+      "name": "All true",
+      "majority": 1,
+      "agreement": 1.0,
+      "votes": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "One false (A)",
+      "majority": 0,
+      "agreement": 1.0,
+      "votes": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "One false (P)",
+      "majority": 0,
+      "agreement": 1.0,
+      "votes": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "Mixed",
+      "majority": 0,
+      "agreement": 1.0,
+      "votes": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    }
+  ],
+  "circuit_breaker": [
+    {
+      "call": 0,
+      "result": "OK",
+      "status": "OK",
+      "state": "CLOSED"
+    },
+    {
+      "call": 1,
+      "result": "OK",
+      "status": "OK",
+      "state": "CLOSED"
+    },
+    {
+      "call": 2,
+      "result": "OK",
+      "status": "OK",
+      "state": "CLOSED"
+    },
+    {
+      "call": 3,
+      "result": "OK",
+      "status": "OK",
+      "state": "CLOSED"
+    },
+    {
+      "call": 4,
+      "result": "OK",
+      "status": "OK",
+      "state": "CLOSED"
+    },
+    {
+      "call": 5,
+      "result": null,
+      "status": "FAILURE: fail",
+      "state": "CLOSED"
+    },
+    {
+      "call": 6,
+      "result": null,
+      "status": "FAILURE: fail",
+      "state": "CLOSED"
+    },
+    {
+      "call": 7,
+      "result": null,
+      "status": "FAILURE: fail",
+      "state": "OPEN"
+    },
+    {
+      "call": 8,
+      "result": null,
+      "status": "CIRCUIT_OPEN",
+      "state": "OPEN"
+    },
+    {
+      "call": 9,
+      "result": null,
+      "status": "CIRCUIT_OPEN",
+      "state": "OPEN"
+    }
+  ],
+  "kill_switch": {
+    "activated": true,
+    "deactivated": true,
+    "reason": "Emergency: unsafe actuator detected",
+    "note": "Software flag, not hardware kill switch"
+  },
+  "audit_ledger": {
+    "entries": 4,
+    "chain_valid": true,
+    "note": "Software hash chain, not TEE-backed"
+  }
+}
