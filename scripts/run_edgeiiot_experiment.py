@@ -1,7 +1,10 @@
-"""Real-dataset experiment: governance on Edge-IIoTset network flows.
+"""Run Edgeiiot Experiment
 
-Maps each network flow to governance predicates and evaluates the admission
-rule. Compares full governance with baselines (no governance, static ACL).
+PURPOSE: Governance on Edge-IIoTset
+INPUTS: Edge-IIoTset CSV (50k)
+OUTPUTS: results/edgeiiot_results.json — 0.03% FA
+DATA TYPE: REAL (dataset)
+PAPER ALIGNMENT: RQ2
 """
 import json, hashlib
 import numpy as np

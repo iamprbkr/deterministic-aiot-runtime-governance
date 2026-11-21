@@ -1,7 +1,10 @@
-"""Concurrency stress test: N threads evaluating the admission rule concurrently.
+"""Test Concurrency Stress
 
-Verifies determinism (no verdict leakage) and measures throughput/latency
-under contention. Saves results to results/concurrency_stress_results.json.
+PURPOSE: Thread safety under concurrent access
+INPUTS: None (self-contained)
+OUTPUTS: results/concurrency_stress_results.json — 0 leakage
+DATA TYPE: REAL (threading)
+PAPER ALIGNMENT: RQ3 concurrency
 """
 import json, time, threading, random
 import numpy as np

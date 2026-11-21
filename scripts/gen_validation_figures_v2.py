@@ -1,4 +1,11 @@
-"""Generate updated validation figures with real measured data."""
+"""Gen Validation Figures V2
+
+PURPOSE: Figure generator v2
+INPUTS: None
+OUTPUTS: figures/*.png
+DATA TYPE: FIGURE GEN
+PAPER ALIGNMENT: N/A
+"""
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt

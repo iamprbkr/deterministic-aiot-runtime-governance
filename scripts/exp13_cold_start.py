@@ -1,4 +1,11 @@
-"""Experiment 13: Cold-start & initialization window vulnerability."""
+"""Exp13 Cold Start
+
+PURPOSE: Cold start latency
+INPUTS: None (self-contained)
+OUTPUTS: results/exp13_coldstart_results.json
+DATA TYPE: REAL (startup)
+PAPER ALIGNMENT: RQ3
+"""
 import json, numpy as np
 ROOT = r"."
 

@@ -1,7 +1,10 @@
-"""Experiment 23: Thermal & DVFS (Dynamic Voltage/Frequency Scaling) simulation.
+"""Exp23 Thermal Dvfs
 
-Simulates CPU downclocking due to heat/low battery and verifies governance
-determinism holds under throttled conditions.
+PURPOSE: Thermal/DVFS (simulated)
+INPUTS: Simulated
+OUTPUTS: results/exp23_thermal_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
 """
 import json, numpy as np, time
 ROOT = r"."

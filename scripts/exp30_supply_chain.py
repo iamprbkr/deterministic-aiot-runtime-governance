@@ -1,4 +1,11 @@
-"""Experiment 30: Supply chain & container/model integrity attestation."""
+"""Exp30 Supply Chain
+
+PURPOSE: Supply chain
+INPUTS: Simulated
+OUTPUTS: results/exp30_supplychain_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ4
+"""
 import json, hashlib, numpy as np
 ROOT = r"."
 

@@ -1,4 +1,11 @@
-"""Experiment 9: Resource-exhaustion DoS (Slowloris / payload flooding)."""
+"""Exp09 Resource Exhaustion Dos
+
+PURPOSE: DoS resilience
+INPUTS: None (self-contained)
+OUTPUTS: results/exp09_dos_results.json
+DATA TYPE: REAL (execution)
+PAPER ALIGNMENT: RQ3
+"""
 import json, time, re, numpy as np
 ROOT = r"."
 

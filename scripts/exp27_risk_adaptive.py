@@ -1,4 +1,11 @@
-"""Experiment 27: Dynamic risk-adaptive policy synthesis."""
+"""Exp27 Risk Adaptive
+
+PURPOSE: Risk-adaptive policy
+INPUTS: Simulated
+OUTPUTS: results/exp27_risk_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ4
+"""
 import json, numpy as np
 ROOT = r"."
 

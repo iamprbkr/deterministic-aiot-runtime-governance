@@ -1,4 +1,11 @@
-"""Experiment 25: Dynamic PII / sensitive payload redaction."""
+"""Exp25 Pii Redaction
+
+PURPOSE: PII redaction
+INPUTS: Simulated
+OUTPUTS: results/exp25_pii_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ1
+"""
 import json, numpy as np
 ROOT = r"."
 

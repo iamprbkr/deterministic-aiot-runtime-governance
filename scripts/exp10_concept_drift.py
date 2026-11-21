@@ -1,7 +1,10 @@
-"""Experiment 10: Concept drift & model-poisoning degradation resilience.
+"""Exp10 Concept Drift
 
-Deliberately degrades model weights over 10 steps, measuring M3 attestation
-and safety invariant enforcement at each step.
+PURPOSE: Concept drift
+INPUTS: Synthetic
+OUTPUTS: results/exp10_conceptdrift_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
 """
 import json, numpy as np
 ROOT = r"."

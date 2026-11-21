@@ -1,10 +1,10 @@
-"""Ablation, null-model, threshold-sensitivity, and figure generation.
+"""Run Ablation Sensitivity Figures
 
-Reads results/experiment_results.json + experiment_observations.csv and produces:
-  - ablation_results.json
-  - sensitivity_results.json
-  - null_model_results.json
-  - figures/fig_rq1..fig_rq5 (PNG, 300 dpi)
+PURPOSE: Ablation figures
+INPUTS: None
+OUTPUTS: figures/*.png
+DATA TYPE: FIGURE GEN
+PAPER ALIGNMENT: N/A
 """
 import json, csv, os, random
 import numpy as np

@@ -1,16 +1,10 @@
-"""OpenPLC Modbus/TCP cyber-physical plant simulation.
+"""Openplc Modbus Sim
 
-Uses pymodbus data structures to simulate a Modbus/TCP industrial SCADA system.
-Tests governance on sensor readings and actuator commands.
-
-Governance predicates:
-  A_k: device authenticated (valid unit ID)
-  P_k: command consistent with policy (e.g., temperature < 80C before opening valve)
-  F_k: command fresh (timestamp within window)
-  C_k: context valid (sensor reading in valid range)
-  B_k: behavioural (actuator state transition valid)
-  I_k: artefact integrity (PLC program hash valid)
-  D_k: execution budget (response within deadline)
+PURPOSE: OpenPLC sim
+INPUTS: Simulated
+OUTPUTS: results/exp_openplc_modbus_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
 """
 import json, numpy as np, time, hashlib
 ROOT = r"."

@@ -1,7 +1,10 @@
-"""Real neural-network quantization demonstration for M3.
+"""M3 Neural Quantization Demo
 
-Trains a small MLP, quantizes to int8, computes infinity-norm divergence
-over a held-out set, compares against SHA-256 digest equality.
+PURPOSE: M3 attestation on real neural network
+INPUTS: Trained MLP (int8)
+OUTPUTS: results/m3_neural_results.json
+DATA TYPE: REAL (trained model)
+PAPER ALIGNMENT: RQ3 M3 mechanism
 """
 import json, hashlib
 import numpy as np

@@ -1,7 +1,10 @@
-"""Policy complexity audit: compare writing equivalent rules across frameworks.
+"""Policy Complexity Audit
 
-15 threat scenarios. Frameworks: proposed governance, iptables, Rego/OPA, Python.
-Metrics: Lines of Code (LoC), cyclomatic complexity, config error rate.
+PURPOSE: Policy complexity
+INPUTS: Hardcoded LoC
+OUTPUTS: results/policy_complexity_results.json
+DATA TYPE: ESTIMATED
+PAPER ALIGNMENT: RQ4
 """
 import json
 ROOT = r"."

@@ -1,4 +1,11 @@
-"""Run governance experiments on 3 new datasets: TON_IoT, CSIC 2010, IDS2025."""
+"""Run New Datasets Experiment
+
+PURPOSE: Governance on TON_IoT/CSIC/IDS2025
+INPUTS: 3 datasets (20k each)
+OUTPUTS: results/exp_new_datasets.json
+DATA TYPE: REAL (datasets)
+PAPER ALIGNMENT: RQ2
+"""
 import json, numpy as np, time
 ROOT = r"."
 import pandas as pd

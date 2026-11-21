@@ -1,8 +1,10 @@
-"""Defensive AI scenario: AI-generated firewall rules governed by admission.
+"""Defensive Ai Scenario
 
-1,000 blocking rules: 500 legitimate, 300 clearly adversarial, 200 ambiguous
-(adversarial rules that partially satisfy predicates — realistic overlap).
-Full governance vs. no governance. Saves to results/defensive_ai_results.json.
+PURPOSE: AI firewall rule governance
+INPUTS: Synthetic (1k rules)
+OUTPUTS: results/defensive_ai_results.json — 6% FA
+DATA TYPE: SIMULATED (synthetic)
+PAPER ALIGNMENT: RQ1
 """
 import json, numpy as np
 ROOT = r"."

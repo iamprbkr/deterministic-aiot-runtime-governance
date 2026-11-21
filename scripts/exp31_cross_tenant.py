@@ -1,4 +1,11 @@
-"""Experiment 31: Cross-tenant isolation & noisy-neighbor containment."""
+"""Exp31 Cross Tenant
+
+PURPOSE: Cross-tenant
+INPUTS: Simulated
+OUTPUTS: results/exp31_tenant_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ4
+"""
 import json, numpy as np
 ROOT = r"."
 

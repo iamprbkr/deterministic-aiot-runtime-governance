@@ -1,4 +1,11 @@
-"""Experiment 16: Policy hot-reload & dynamic rule update safety."""
+"""Exp16 Policy Hotreload
+
+PURPOSE: Policy hot-reload
+INPUTS: Simulated
+OUTPUTS: results/exp16_hotreload_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
+"""
 import json, numpy as np
 ROOT = r"."
 

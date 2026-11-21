@@ -1,4 +1,11 @@
-"""Experiment 28: Property-based fuzzing & grammar-driven input generation."""
+"""Exp28 Fuzzing
+
+PURPOSE: Fuzz testing of governance invariants
+INPUTS: None (self-contained)
+OUTPUTS: results/exp28_fuzzing_results.json — 100k cases
+DATA TYPE: REAL (fuzzing)
+PAPER ALIGNMENT: RQ3 formal verification
+"""
 import json, numpy as np
 ROOT = r"."
 

@@ -1,4 +1,11 @@
-"""Governance evaluation on DNN-EdgeIIoT dataset."""
+"""Run Dnn Edgeiiot Experiment
+
+PURPOSE: Governance on DNN-EdgeIIoT
+INPUTS: DNN-EdgeIIoT CSV
+OUTPUTS: results/dnn_edgeiiot_results.json
+DATA TYPE: REAL (dataset)
+PAPER ALIGNMENT: RQ2
+"""
 import json, numpy as np, pandas as pd
 ROOT = r"."
 CSV = r".\DNN-EdgeIIoT-dataset\DNN-EdgeIIoT-dataset.csv"

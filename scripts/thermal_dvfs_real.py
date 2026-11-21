@@ -1,4 +1,11 @@
-"""Thermal/DVFS: Real measurement based on Renode data + CPU frequency."""
+"""Thermal Dvfs Real
+
+PURPOSE: Thermal/DVFS real
+INPUTS: Renode base
+OUTPUTS: results/exp_thermal_dvfs_real.json
+DATA TYPE: REAL (base)
+PAPER ALIGNMENT: RQ3
+"""
 import json, time, psutil
 
 ROOT = r"."

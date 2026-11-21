@@ -1,8 +1,10 @@
-"""Experiment 1: Deterministic invariant verification (zero-bypass audit).
+"""Exp1 Invariant Verification
 
-Proves that the admission rule blocks 100% of out-of-bounds state transitions
-or unsafe actions, even when the underlying AI model outputs a false negative.
-Tests boundary cases, combination cases, and UNKNOWN predicate handling.
+PURPOSE: Invariant verification
+INPUTS: Synthetic
+OUTPUTS: results/exp1_invariant_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
 """
 import json, numpy as np
 ROOT = r"."

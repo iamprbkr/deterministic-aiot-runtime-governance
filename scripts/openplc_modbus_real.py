@@ -1,8 +1,10 @@
-"""OpenPLC Modbus/TCP: Real Modbus communication with governance.
+"""Openplc Modbus Real
 
-Uses pymodbus to create a real Modbus/TCP server and client.
-Tests governance on actual Modbus read/write operations.
-Uses real temperature data from Edge-IIoTset dataset.
+PURPOSE: OpenPLC real
+INPUTS: Real Modbus I/O
+OUTPUTS: results/exp_openplc_modbus_real.json
+DATA TYPE: REAL
+PAPER ALIGNMENT: RQ3
 """
 import json, numpy as np, time, threading, socket
 ROOT = r"."

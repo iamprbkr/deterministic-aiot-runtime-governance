@@ -1,8 +1,10 @@
-"""Experiment 20: Cross-dataset zero-day generalization.
+"""Exp20 Cross Dataset
 
-Train governance predicates on Edge-IIoTset, evaluate on CIC-IoT2023.
-Measures how much deterministic invariants rescue system safety when AI
-accuracy drops on unseen attack distributions.
+PURPOSE: Cross-dataset generalization
+INPUTS: Edge-IIoTset + CIC-IoT2023
+OUTPUTS: results/exp20_crossdataset_results.json
+DATA TYPE: REAL (datasets)
+PAPER ALIGNMENT: RQ2
 """
 import json, numpy as np, pandas as pd
 ROOT = r"."

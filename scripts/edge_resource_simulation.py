@@ -1,7 +1,10 @@
-"""Edge resource simulation: governance under constrained profiles.
+"""Edge Resource Simulation
 
-Simulates memory limit (64 MB), CPU limit (0.5 core), 10 ms deadline.
-Measures decision latency, throughput, deadline misses, memory footprint.
+PURPOSE: Edge resource simulation
+INPUTS: Simulated
+OUTPUTS: results/edge_resource_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
 """
 import time, json, numpy as np
 import sys

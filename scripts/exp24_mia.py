@@ -1,4 +1,11 @@
-"""Experiment 24: Differential privacy & membership inference audit."""
+"""Exp24 Mia
+
+PURPOSE: Membership inference
+INPUTS: Synthetic
+OUTPUTS: results/exp24_mia_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
+"""
 import json, numpy as np
 ROOT = r"."
 

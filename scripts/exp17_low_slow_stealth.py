@@ -1,7 +1,10 @@
-"""Experiment 17: Low-and-slow stealth attack detection (temporal window integrity).
+"""Exp17 Low Slow Stealth
 
-Replays multi-stage, low-frequency reconnaissance spread over simulated hours.
-Tests stateful history tracking across long intervals.
+PURPOSE: Low-and-slow stealth
+INPUTS: Synthetic
+OUTPUTS: results/exp17_stealth_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
 """
 import json, numpy as np
 ROOT = r"."

@@ -1,4 +1,11 @@
-"""Experiment 19: Tamper-evident audit logging & forensic overhead."""
+"""Exp19 Audit Logging
+
+PURPOSE: Tamper-evident audit logging
+INPUTS: None (self-contained)
+OUTPUTS: results/exp19_audit_results.json — 10k entries
+DATA TYPE: REAL (hash chain)
+PAPER ALIGNMENT: RQ1 auditability
+"""
 import json, time, hashlib, numpy as np
 ROOT = r"."
 

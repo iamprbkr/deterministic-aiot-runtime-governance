@@ -1,4 +1,11 @@
-"""Statistical audit: Wilcoxon, Cliff's Delta, Holm-Bonferroni, power analysis."""
+"""Statistical Audit
+
+PURPOSE: Statistical significance analysis
+INPUTS: Result JSONs
+OUTPUTS: results/statistical_audit_results.json
+DATA TYPE: REAL (bootstrap CIs)
+PAPER ALIGNMENT: RQ2 statistics
+"""
 import json, numpy as np, csv
 from scipy import stats
 from statsmodels.stats.power import TTestIndPower

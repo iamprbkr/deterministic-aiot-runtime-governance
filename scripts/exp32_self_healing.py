@@ -1,4 +1,11 @@
-"""Experiment 32: Closed-loop self-healing & automated remediation rollback."""
+"""Exp32 Self Healing
+
+PURPOSE: Self-healing
+INPUTS: Simulated
+OUTPUTS: results/exp32_selfhealing_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ4
+"""
 import json, numpy as np
 ROOT = r"."
 

@@ -1,7 +1,10 @@
-"""Live telemetry subscriber: fetch real public sensor data and govern it.
+"""Live Telemetry Subscriber
 
-Connects to OpenAQ (air quality) public API and evaluates governance
-on real telemetry streams.
+PURPOSE: USGS live telemetry governance
+INPUTS: USGS API (real)
+OUTPUTS: results/live_telemetry_results.json — 98% admissible
+DATA TYPE: REAL (live API)
+PAPER ALIGNMENT: RQ2 real-world
 """
 import json, time, urllib.request, numpy as np
 ROOT = r"."

@@ -1,11 +1,10 @@
-"""Compute a bound on false-allow rate under bounded uncertainty.
+"""Formal Bound
 
-If each predicate evaluation has error probability epsilon (P(predicate=True | actual=False) = epsilon),
-then the false-allow rate (all 7 predicates evaluate True when at least one should be False)
-is bounded by: P_FA <= 1 - (1-epsilon)^7 (if all predicates are independent and at least one is actually False).
-
-Also compute: minimality of the predicate set — for each predicate, the number of attack
-cases that are caught only by that predicate (not by any other).
+PURPOSE: Formal bound (epsilon^k) computation
+INPUTS: None (mathematical)
+OUTPUTS: results/formal_bound_results.json
+DATA TYPE: MATHEMATICAL (proven)
+PAPER ALIGNMENT: RQ3 formal guarantees
 """
 import json, numpy as np
 

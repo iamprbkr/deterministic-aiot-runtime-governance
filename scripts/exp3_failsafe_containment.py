@@ -1,7 +1,10 @@
-"""Experiment 3: Fail-safe containment & circuit-breaker recovery.
+"""Exp3 Failsafe Containment
 
-Simulates governor crash mid-evaluation, cascading violations, and verifies
-Time-to-Safe-State (TTSS) and no traffic leak.
+PURPOSE: Failsafe containment
+INPUTS: Simulated
+OUTPUTS: results/exp3_failsafe_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ1
 """
 import json, time, numpy as np
 ROOT = r"."

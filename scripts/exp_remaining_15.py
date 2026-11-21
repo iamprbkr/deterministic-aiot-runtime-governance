@@ -1,6 +1,10 @@
-"""15 remaining experiments: DoS, TOCTOU, cold-start, smuggling, split-brain,
-hot-reload, audit logging, MIA, PII redaction, zero egress, risk-adaptive,
-fuzzing, swarm, supply chain, cross-tenant, self-healing.
+"""Exp Remaining 15
+
+PURPOSE: Remaining experiments
+INPUTS: Mixed
+OUTPUTS: results/exp_remaining_15_results.json
+DATA TYPE: MIXED
+PAPER ALIGNMENT: RQ3
 """
 import json, time, numpy as np, hashlib, random, threading
 ROOT = r"."

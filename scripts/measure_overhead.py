@@ -1,4 +1,11 @@
-"""Measured overhead: time the governor's admission decision."""
+"""Measure Overhead
+
+PURPOSE: Measure governance decision overhead
+INPUTS: None (self-contained)
+OUTPUTS: results/overhead_results.json — 0.47 us/decision
+DATA TYPE: REAL (perf_counter)
+PAPER ALIGNMENT: RQ3 overhead analysis
+"""
 import time, json, numpy as np
 import sys
 sys.path.insert(0, r".")

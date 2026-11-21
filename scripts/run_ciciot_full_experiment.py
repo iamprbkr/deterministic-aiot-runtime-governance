@@ -1,4 +1,11 @@
-"""Full CIC-IoT2023 governance evaluation (33 attack types)."""
+"""Run Ciciot Full Experiment
+
+PURPOSE: Governance on CIC-IoT2023
+INPUTS: CIC-IoT2023 CSV (7k)
+OUTPUTS: results/ciciot_full_results.json — 74.13% FA
+DATA TYPE: REAL (dataset)
+PAPER ALIGNMENT: RQ2
+"""
 import json, numpy as np, pandas as pd, glob, os
 ROOT = r"."
 CIC = r".\CIC_IOT_Dataset2023\CSV"

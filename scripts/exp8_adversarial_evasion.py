@@ -1,7 +1,10 @@
-"""Experiment 8: Adversarial evasion & feature-perturbation resistance.
+"""Exp8 Adversarial Evasion
 
-Uses Edge-IIoTset data. Generates adversarial perturbations (random search)
-to evade the governance boundary. Measures defense-in-depth catch rate.
+PURPOSE: Adversarial evasion
+INPUTS: Synthetic
+OUTPUTS: results/exp8_adversarial_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ1
 """
 import json, numpy as np, pandas as pd
 ROOT = r"."

@@ -1,4 +1,11 @@
-"""Experiment 7: Multi-node scalability & throughput saturation."""
+"""Exp7 Scalability
+
+PURPOSE: Scalability
+INPUTS: Simulated
+OUTPUTS: results/exp7_scalability_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
+"""
 import json, time, numpy as np
 ROOT = r"."
 rng = np.random.default_rng(42)

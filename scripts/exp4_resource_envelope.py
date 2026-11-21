@@ -1,4 +1,11 @@
-"""Experiment 4: Resource envelope profiling (3 tiers)."""
+"""Exp4 Resource Envelope
+
+PURPOSE: Resource envelope
+INPUTS: Simulated
+OUTPUTS: results/exp4_resource_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
+"""
 import json, time, numpy as np
 ROOT = r"."
 rng = np.random.default_rng(42)

@@ -1,8 +1,10 @@
-"""Real-artifact demonstration of M3 (Post-Quantization Optimization Attestor).
+"""M3 Real Artifact Demo
 
-Trains a tiny logistic regression, quantizes to int8, computes infinity-norm
-divergence over a held-out set, and compares against SHA-256 digest equality.
-Demonstrates that cryptographic identity != behavioural validity.
+PURPOSE: M3 attestation on real logistic regression
+INPUTS: Trained sklearn model (int8)
+OUTPUTS: results/m3_real_artifact_results.json
+DATA TYPE: REAL (trained model)
+PAPER ALIGNMENT: RQ3 M3 mechanism
 """
 import json, hashlib, numpy as np
 from sklearn.linear_model import LogisticRegression

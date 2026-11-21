@@ -1,4 +1,11 @@
-"""Experiment 26: Zero raw-data egress (federated/local-first compliance)."""
+"""Exp26 Zero Egress
+
+PURPOSE: Zero egress
+INPUTS: Simulated
+OUTPUTS: results/exp26_egress_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ1
+"""
 import json, numpy as np
 ROOT = r"."
 

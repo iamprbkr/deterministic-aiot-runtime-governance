@@ -1,4 +1,11 @@
-"""Generate Thermal/DVFS figure with real Renode-based data."""
+"""Gen Thermal Figure Real
+
+PURPOSE: Thermal figure
+INPUTS: None
+OUTPUTS: figures/fig_thermal_dvfs.png
+DATA TYPE: FIGURE GEN
+PAPER ALIGNMENT: N/A
+"""
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt

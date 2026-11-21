@@ -1,4 +1,11 @@
-"""Experiment 29: Multi-agent collusion & coordinated botnet swarm."""
+"""Exp29 Swarm
+
+PURPOSE: Swarm governance
+INPUTS: Simulated
+OUTPUTS: results/exp29_swarm_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ4
+"""
 import json, numpy as np
 ROOT = r"."
 

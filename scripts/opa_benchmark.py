@@ -1,6 +1,10 @@
-"""Benchmark: proposed in-process governance vs. OPA (out-of-process).
+"""Opa Benchmark
 
-Runs the same workload through both and measures latency/throughput.
+PURPOSE: OPA comparison benchmark
+INPUTS: None (self-contained)
+OUTPUTS: results/opa_benchmark_results.json
+DATA TYPE: REAL (OPA invocation)
+PAPER ALIGNMENT: RQ4 comparison
 """
 import json, time, subprocess, os, numpy as np, sys
 ROOT = r"."

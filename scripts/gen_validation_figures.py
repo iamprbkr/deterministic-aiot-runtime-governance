@@ -1,4 +1,11 @@
-"""Generate validation figures for Renode, QEMU, Thermal/DVFS, OpenPLC results."""
+"""Gen Validation Figures
+
+PURPOSE: Figure generator
+INPUTS: None
+OUTPUTS: figures/*.png
+DATA TYPE: FIGURE GEN
+PAPER ALIGNMENT: N/A
+"""
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt

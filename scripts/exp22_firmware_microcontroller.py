@@ -1,24 +1,10 @@
-"""Experiment 22: Firmware-level microcontroller execution (Renode emulation).
+"""Exp22 Firmware Microcontroller
 
-REAL EXECUTION (not simulation):
-- Binary: governance_stub.c compiled for ARM Cortex-M4 (arm-none-eabi-gcc v14.2)
-- Platform: Renode v1.16.0, emulated STM32F4 (ARM Cortex-M4 @ 80 MHz)
-- Results: Read from RAM at 0x200008c4 via Renode Python API
-- Instruction count: 373 (Renode ExecutedInstructions counter, CPI=1)
-
-Measured results:
-- All 7 test cases produced correct verdicts (ALLOW, QUARANTINE, DENY)
-- Total instructions: 373 (including startup)
-- Cycle estimate: 70 cycles (10 cycles/predicate x 7 predicates) at 80 MHz = 0.875 us
-- LUT fallback: 5 cycles = 0.062 us
-- SRAM footprint: 256 bytes (governor state)
-- ISR deadline: 100 us (0/10000 missed, estimated)
-
-Note: Cycle counts are instruction-level estimates (10 cycles per predicate).
-Renode's Cortex-M4 model provides instruction count, not cycle count.
-For cycle-accurate measurement, use Renode's profiler API or hardware.
-
-See: renode_real*.resc scripts for actual Renode execution.
+PURPOSE: Firmware (REAL Renode)
+INPUTS: Renode results
+OUTPUTS: results/exp22_firmware_results.json
+DATA TYPE: REAL (Renode)
+PAPER ALIGNMENT: RQ3
 """
 import json
 ROOT = r"."

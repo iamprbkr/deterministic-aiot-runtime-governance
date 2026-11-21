@@ -1,4 +1,11 @@
-"""Generate OpenPLC figure with real Modbus data."""
+"""Gen Openplc Figure Real
+
+PURPOSE: OpenPLC figure
+INPUTS: None
+OUTPUTS: figures/fig_openplc_modbus.png
+DATA TYPE: FIGURE GEN
+PAPER ALIGNMENT: N/A
+"""
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt

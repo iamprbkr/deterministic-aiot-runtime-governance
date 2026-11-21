@@ -1,6 +1,10 @@
-"""Governance evaluation on CIC-IDS-2018 (integrated dataset).
+"""Run Cicids2018 Experiment
 
-Uses IP addresses, ports, and labels. 49,990 flows, 14 attack types.
+PURPOSE: Governance on CIC-IDS-2018
+INPUTS: CIC-IDS-2018 CSV (19k)
+OUTPUTS: results/cicids2018_results.json — 0% FA
+DATA TYPE: REAL (dataset)
+PAPER ALIGNMENT: RQ2
 """
 import json, numpy as np, pandas as pd
 ROOT = r"."

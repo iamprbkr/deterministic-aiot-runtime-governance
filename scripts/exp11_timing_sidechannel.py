@@ -1,7 +1,10 @@
-"""Experiment 11: Timing side-channel & constant-time execution analysis.
+"""Exp11 Timing Sidechannel
 
-Sends benign vs. borderline-malicious payloads and runs statistical variance
-tests (Welch's t-test) on response latency to prove near-constant-time enforcement.
+PURPOSE: Timing side-channel
+INPUTS: None (self-contained)
+OUTPUTS: results/exp11_timing_results.json
+DATA TYPE: REAL (timing)
+PAPER ALIGNMENT: RQ3
 """
 import json, time, numpy as np
 ROOT = r"."

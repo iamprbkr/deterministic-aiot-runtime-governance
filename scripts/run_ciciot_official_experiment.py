@@ -1,6 +1,10 @@
-"""Governance evaluation on CIC-IoT2023 Official Flow Feature Dataset.
+"""Run Ciciot Official Experiment
 
-Uses merged CSVs with 40 flow features and Label column (34 attack types + Benign).
+PURPOSE: Official CIC-IoT2023 eval
+INPUTS: CIC-IoT2023 official
+OUTPUTS: results/ciciot_official_results.json
+DATA TYPE: REAL (dataset)
+PAPER ALIGNMENT: RQ2
 """
 import json, numpy as np, pandas as pd, glob, os
 ROOT = r"."

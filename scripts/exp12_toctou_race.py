@@ -1,4 +1,11 @@
-"""Experiment 12: TOCTOU race condition resilience."""
+"""Exp12 Toctou Race
+
+PURPOSE: TOCTOU race
+INPUTS: None (self-contained)
+OUTPUTS: results/exp12_toctou_results.json
+DATA TYPE: SIMULATED (sleep)
+PAPER ALIGNMENT: RQ3
+"""
 import json, time, threading, numpy as np
 ROOT = r"."
 total = 10000

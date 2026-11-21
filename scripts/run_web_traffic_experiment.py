@@ -1,7 +1,10 @@
-"""Web traffic governance: HTTP/API requests governed by admission rule.
+"""Run Web Traffic Experiment
 
-5,000 benign + 5,000 malicious (SQL injection, XSS, brute force).
-Full governance vs. no governance vs. static WAF rules.
+PURPOSE: Web traffic governance
+INPUTS: Synthetic (10k requests)
+OUTPUTS: results/web_traffic_results.json — 19.86% FA
+DATA TYPE: SIMULATED (synthetic)
+PAPER ALIGNMENT: RQ2 web
 """
 import json, numpy as np, pandas as pd
 ROOT = r"."

@@ -1,4 +1,11 @@
-"""Experiment 15: Split-brain & network partition state reconciliation."""
+"""Exp15 Split Brain
+
+PURPOSE: Split-brain resilience
+INPUTS: Simulated
+OUTPUTS: results/exp15_splitbrain_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
+"""
 import json, numpy as np
 ROOT = r"."
 

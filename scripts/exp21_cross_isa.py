@@ -1,8 +1,10 @@
-"""Experiment 21: Cross-ISA emulation parity (x86_64 vs ARM64).
+"""Exp21 Cross Isa
 
-Simulates governance on two architectures and compares decision parity.
-Uses Python with architecture-specific performance profiles (no actual QEMU needed
-for the logic test; QEMU provides cycle-accurate verification).
+PURPOSE: Cross-ISA (simulated)
+INPUTS: Simulated
+OUTPUTS: results/exp21_crossisa_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
 """
 import json, numpy as np, time
 ROOT = r"."

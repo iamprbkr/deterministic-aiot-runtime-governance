@@ -1,4 +1,11 @@
-"""Simulated distributed replay test (Phase 5)."""
+"""Run Distributed Replay Sim
+
+PURPOSE: Distributed replay
+INPUTS: Simulated
+OUTPUTS: results/distributed_replay_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
+"""
 import random, json
 random.seed(42)
 N_NODES = 5

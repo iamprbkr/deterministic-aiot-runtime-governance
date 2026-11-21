@@ -1,7 +1,10 @@
-"""Adversarial resilience: red-team the governance mechanism.
+"""Adversarial Resilience Test
 
-Tests: (1) evasion attacks on M3, (2) governor targeting, (3) replay attacks on M4,
-(4) overload attacks on M2, (5) policy evasion on M1.
+PURPOSE: 6 attack types
+INPUTS: Synthetic payloads
+OUTPUTS: results/adversarial_resilience_results.json
+DATA TYPE: SIMULATED (synthetic)
+PAPER ALIGNMENT: RQ1
 """
 import json, numpy as np
 ROOT = r"."

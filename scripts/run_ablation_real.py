@@ -1,6 +1,10 @@
-"""Real ablation: toggles each mechanism off and measures degradation on the synthetic corpus.
+"""Run Ablation Real
 
-Each configuration is actually executed (not estimated). Results saved to results/ablation_real_results.json.
+PURPOSE: Real ablation study (M1-M4)
+INPUTS: Governance rule evaluation
+OUTPUTS: results/ablation_results.json — M1:0.797, M2:0.762
+DATA TYPE: REAL (measured)
+PAPER ALIGNMENT: RQ4 ablation
 """
 import json, csv
 import numpy as np

@@ -1,4 +1,11 @@
-"""Experiment 14: Cross-layer protocol translation & smuggling resilience."""
+"""Exp14 Cross Layer Smuggling
+
+PURPOSE: Cross-layer smuggling
+INPUTS: Synthetic payloads
+OUTPUTS: results/exp14_smuggling_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
+"""
 import json, numpy as np
 ROOT = r"."
 

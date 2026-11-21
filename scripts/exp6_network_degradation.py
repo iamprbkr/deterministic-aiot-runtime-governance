@@ -1,4 +1,11 @@
-"""Experiment 6: Network degradation & asynchronous jitter resilience."""
+"""Exp6 Network Degradation
+
+PURPOSE: Network degradation
+INPUTS: Simulated
+OUTPUTS: results/exp6_network_results.json
+DATA TYPE: SIMULATED
+PAPER ALIGNMENT: RQ3
+"""
 import json, numpy as np
 ROOT = r"."
 rng = np.random.default_rng(42)
