@@ -205,7 +205,13 @@ python3 scripts/gen_openplc_figure_real.py
 ## FAQ
 
 **Q: Are the results real or simulated?**
-A: All dataset experiments use real published datasets (Edge-IIoTset, CIC-IoT2023, CIC-IDS-2018, TON_IoT, CSIC 2010, IDS2025). Renode and QEMU results are from actual emulation. Thermal/DVFS is simulated (labeled). OpenPLC uses real Modbus/TCP communication (pymodbus).
+A: All dataset experiments use real published datasets (Edge-IIoTset, CIC-IoT2023, CIC-IDS-2018, TON_IoT, CSIC 2010, IDS2025). Renode results: binary executed, 373 instructions measured, 7/7 verdicts correct (cycle counts are estimates). QEMU: functional verification + cross-ISA parity (Python x86 = ARM, 7/7). Thermal/DVFS: simulated (base from Renode, frequency scaling modeled). OpenPLC: real Modbus/TCP communication (pymodbus), but not real OpenPLC runtime (requires Docker).
+
+**Q: What about Docker/WSL?**
+A: Docker Desktop is installed but the daemon is not running. OpenPLC runtime requires Docker (not available). Multi-container testbed (docker-compose.yml) is defined but not executed. WSL2 is available but not used for experiments. See DOCKER_WSL_STATUS.md for details.
+
+**Q: What requires real hardware?**
+A: (1) Renode cycle-accurate profiling (needs Renode profiler API), (2) QEMU true cross-ISA (needs x86 C compiler), (3) Thermal/DVFS (needs real CPU with cpufreq + thermal sensors), (4) OpenPLC runtime (needs Docker or native build), (5) Multi-container testbed (needs Docker daemon).
 
 **Q: Can I reproduce the results?**
 A: Yes. Run `bash run_eval.sh` with seed 42. All scripts are in `scripts/`. All results are in `results/*.json`.
